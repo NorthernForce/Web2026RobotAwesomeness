@@ -4,6 +4,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Navigation() {
   const leftButtons = [
@@ -21,12 +22,22 @@ export function Navigation() {
           {/* Left buttons */}
           <div className="flex items-center gap-2">
             {leftButtons.map((button) => (
-              <button
-                key={button}
-                className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
-              >
-                {button}
-              </button>
+              button === 'Design' ? (
+                <Link
+                  key={button}
+                  to="/design"
+                  className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
+                >
+                  {button}
+                </Link>
+              ) : (
+                <button
+                  key={button}
+                  className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
+                >
+                  {button}
+                </button>
+              )
             ))}
           </div>
 

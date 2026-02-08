@@ -12,7 +12,7 @@ export default function HeroBanner() {
   ];
 
   return (
-    <div className="relative bg-black">
+    <div className="relative bg-black hero-banner-swiper">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={0}
@@ -32,13 +32,15 @@ export default function HeroBanner() {
         ))}
       </Swiper>
 
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h2
-          className="text-white text-3xl md:text-5xl lg:text-6xl text-center px-4"
-          style={{ fontFamily: 'Autowide, sans-serif' }}
-        >
-          Northern Force Robotics: Team 172
-        </h2>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+        <div className="text-center px-4">
+          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
+            Northern Force
+          </h1>
+          <p className="text-pink-500 text-3xl md:text-5xl lg:text-6xl font-bold">
+            Team 172
+          </p>
+        </div>
       </div>
     </div>
   );

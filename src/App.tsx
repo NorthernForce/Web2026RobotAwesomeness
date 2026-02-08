@@ -1,27 +1,14 @@
-import { Navigation } from './components/Navigation';
-import HeroBanner from './components/HeroBanner';
-import { VideoPlayer } from './components/VideoPlayer';
-import { LinksSection } from './components/LinksSection';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Design from './Design';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <Navigation />
-       <HeroBanner /> 
-      <VideoPlayer />
-      <LinksSection />
-      
-      {/* Footer */}
-      <footer className="bg-black text-white py-8 border-t-2 border-pink-500">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-lg mb-2">
-            Northern Force - Team 172
-          </p>
-          <p className="text-gray-400 text-sm">
-            © 2026 Northern Force Robotics. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/design" element={<Design />} />
+      </Routes>
+    </Router>
   );
 }

@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Swiper navigation arrows - pink styling */
+.hero-banner-swiper .swiper-button-next,
+.hero-banner-swiper .swiper-button-prev {
+  color: #ec4899 !important;
+}
+
+.hero-banner-swiper .swiper-button-next:hover,
+.hero-banner-swiper .swiper-button-prev:hover {
+  color: #db2777 !important;
+}

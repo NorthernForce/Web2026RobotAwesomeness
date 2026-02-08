@@ -8,7 +8,7 @@ function PrevArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-pink-500/80 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
+      className="absolute left-4 top-1/2 -translate-y-1/2 z-10 !bg-pink-500/80 hover:!bg-pink-600 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
       aria-label="Previous slide"
     >
       <ChevronLeft className="w-6 h-6" />
@@ -21,7 +21,7 @@ function NextArrow(props: any) {
   return (
     <button
       onClick={onClick}
-      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-pink-500/80 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
+      className="absolute right-4 top-1/2 -translate-y-1/2 z-10 !bg-pink-500/80 hover:!bg-pink-600 text-white p-3 rounded-full transition-all duration-200 hover:scale-110"
       aria-label="Next slide"
     >
       <ChevronRight className="w-6 h-6" />
