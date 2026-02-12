@@ -1,9 +1,11 @@
 import { Clock } from 'lucide-react';
+import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 
 export function ComingSoonPage() {
   return (
     <>
+      <Navigation />
       <div className="flex items-center justify-center bg-black px-4 py-16">
         <div className="max-w-2xl text-center">
           <div className="mb-8 flex justify-center">

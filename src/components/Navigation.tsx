@@ -49,12 +49,13 @@ export function Navigation() {
           {/* Right buttons */}
           <div className="flex items-center gap-2">
             {rightButtons.map((button) => (
-              <button
-                key={button}
-                className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
-              >
-                {button}
-              </button>
+              <Link
+                  key={button}
+                  to="/comingsoonpage"
+                  className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
+                >
+                  {button}
+                </Link>
             ))}
 
             {/* Social media icons */}
