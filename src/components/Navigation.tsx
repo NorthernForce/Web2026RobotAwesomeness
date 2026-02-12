@@ -30,12 +30,13 @@ export function Navigation() {
                   {button}
                 </Link>
               ) : (
-                <button
+                <Link
                   key={button}
+                  to="/comingsoonpage"
                   className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
                 >
                   {button}
-                </button>
+                </Link>
               )
             ))}
           </div>
