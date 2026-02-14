@@ -1,6 +1,7 @@
 import { Clock } from 'lucide-react';
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
+import { Footer } from './components/Footer';
 
 export function ComingSoonPage() {
   return (
@@ -31,6 +32,7 @@ export function ComingSoonPage() {
       </div>
       
       <LinksSection />
+      <Footer />
     </>
   );
 }
