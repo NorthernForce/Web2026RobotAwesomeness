@@ -5,7 +5,7 @@ export function LinksSection() {
     {
       title: 'FIRST Robotics',
       description: 'Learn more about FIRST Robotics Competition',
-      url: '#',
+      url: 'https://firstfrc.blob.core.windows.net/frc2026/Manual/2026GameManual.pdf',
       icon: Trophy,
     },
     {
