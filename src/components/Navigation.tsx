@@ -1,5 +1,4 @@
 import {
-  Shield,
   Facebook,
   Instagram,
   Twitter,
@@ -13,7 +12,7 @@ export function Navigation() {
     "Donate",
     "Design",
   ];
-  const rightButtons = ["News", "Links", "Memorial"];
+  const rightButtons = ["News", "Coliseum", "Memorial"];
 
   return (
     <nav className="bg-black border-b-4 border-pink-500 sticky top-0 z-50">
@@ -42,11 +41,9 @@ export function Navigation() {
           </div>
 
           {/* Center logo */}
-          <div className="flex-shrink-0">
-            <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center shadow-lg shadow-pink-500/50">
-              <Shield className="w-10 h-10 text-white" />
-            </div>
-          </div>
+          <Link to="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
+            <img src="./images/172logo_layers_pink.png" alt="Northern Force 172 Logo" className="w-16 h-16 object-contain" />
+          </Link>
 
           {/* Right buttons */}
           <div className="flex items-center gap-2">
