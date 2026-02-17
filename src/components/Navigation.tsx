@@ -1,9 +1,9 @@
 import {
   Facebook,
   Instagram,
-  Twitter,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import blueAllianceLogo from "/images/BlueAllianceReg.png";
 
 export function Navigation() {
   const leftButtons = [
@@ -61,22 +61,22 @@ export function Navigation() {
             {/* Social media icons */}
             <div className="flex items-center gap-2 ml-2 pl-2 border-l border-gray-700">
               <a
-                href="#"
+                href="https://www.facebook.com/falgor172/"
                 className="text-white hover:text-pink-500 transition-colors p-2"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/the_northern_force/"
                 className="text-white hover:text-pink-500 transition-colors p-2"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="text-white hover:text-pink-500 transition-colors p-2"
+                href="https://www.thebluealliance.com/team/172"
+                className="text-white hover:opacity-75 transition-opacity p-2"
               >
-                <Twitter className="w-5 h-5" />
+                <img src={blueAllianceLogo} alt="The Blue Alliance" className="w-5 h-5 object-contain" />
               </a>
             </div>
           </div>

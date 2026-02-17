@@ -1,4 +1,4 @@
-import Slider from 'react-slick/lib/slider';
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -69,10 +69,10 @@ export function HeroCarousel() {
       {/* Overlay text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="text-center">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
+          <h1 className="text-6xl md:text-8xl font-semi-bold text-white mb-4">
             Northern Force
           </h1>
-          <p className="text-3xl md:text-5xl text-pink-500 font-semibold">
+          <p className="text-3xl md:text-5xl text-pink-500 font-semi-bold">
             Team 172
           </p>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-zinc-800 py-12 mt-20">
+    <footer className="bg-black border-t border-zinc-800 py-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="inline-block px-8 py-4 border-2 border-[#FF007F] mb-8">
           <h2 className="text-2xl font-black text-white tracking-tighter uppercase">Northern Force <span className="text-[#FF007F]">Team 172</span></h2>
