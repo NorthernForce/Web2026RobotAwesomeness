@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import Home from './Home';
 import Design from './Design';
+import Contact from './Contact';
 import { ComingSoonPage } from './ComingSoonPage';
 
 function ScrollToTop() {
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/design" element={<Design />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/comingsoonpage" element={<ComingSoonPage />} />
       </Routes>
     </Router>

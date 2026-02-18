@@ -20,25 +20,21 @@ export function Navigation() {
         <div className="flex items-center justify-center gap-8 h-20">
           {/* Left buttons */}
           <div className="flex items-center gap-2">
-            {leftButtons.map((button) => (
-              button === 'Design' ? (
+            {leftButtons.map((button) => {
+              let path = "/comingsoonpage";
+              if (button === 'Design') path = "/design";
+              if (button === 'Contact') path = "/contact";
+              
+              return (
                 <Link
                   key={button}
-                  to="/design"
+                  to={path}
                   className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
                 >
                   {button}
                 </Link>
-              ) : (
-                <Link
-                  key={button}
-                  to="/comingsoonpage"
-                  className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
-                >
-                  {button}
-                </Link>
-              )
-            ))}
+              );
+            })}
           </div>
 
           {/* Center logo */}
