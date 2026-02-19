@@ -7,6 +7,10 @@ interface CalendarEvent {
   endDate?: Date;
   title: string;
   color?: string;
+  description?: string;
+  time?: string;
+  location?: string;
+  moreInfoLink?: string;
 }
 
 interface EventCalendarProps {
@@ -15,6 +19,8 @@ interface EventCalendarProps {
 
 export function EventCalendar({ events }: EventCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -95,6 +101,33 @@ export function EventCalendar({ events }: EventCalendarProps) {
     );
   };
 
+  const handleEventClick = (event: CalendarEvent) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedEvent(null);
+  };
+
+  const formatEventDate = (event: CalendarEvent) => {
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    
+    if (event.date) {
+      return `${monthNames[event.date.getMonth()]} ${event.date.getDate()}, ${event.date.getFullYear()}`;
+    }
+    
+    if (event.startDate && event.endDate) {
+      return `${monthNames[event.startDate.getMonth()]} ${event.startDate.getDate()} - ${monthNames[event.endDate.getMonth()]} ${event.endDate.getDate()}, ${event.endDate.getFullYear()}`;
+    }
+    
+    return '';
+  };
+
   const days = getDaysInMonth(currentDate);
 
   return (
@@ -153,15 +186,16 @@ export function EventCalendar({ events }: EventCalendarProps) {
                   </div>
                   <div className="space-y-1">
                     {dayEvents.slice(0, 3).map((event, eventIndex) => (
-                      <div
+                      <button
                         key={eventIndex}
-                        className={`text-xs px-2 py-1 rounded truncate ${
+                        className={`text-xs px-2 py-1 rounded truncate w-full text-left ${
                           event.color || 'bg-pink-500'
-                        } text-white font-medium`}
+                        } text-white font-medium cursor-pointer hover:opacity-80 transition-opacity`}
                         title={event.title}
+                        onClick={() => handleEventClick(event)}
                       >
                         {event.title}
-                      </div>
+                      </button>
                     ))}
                     {dayEvents.length > 3 && (
                       <div className="text-xs text-gray-400 px-2">
@@ -175,6 +209,55 @@ export function EventCalendar({ events }: EventCalendarProps) {
           );
         })}
       </div>
+
+      {/* Event Modal */}
+      {isModalOpen && selectedEvent && (
+        <div 
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div 
+            className="bg-gray-900 border-4 border-pink-500 p-8 rounded-xl shadow-2xl shadow-pink-500/30 max-w-lg w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 className="text-3xl font-bold text-white mb-4">{selectedEvent.title}</h3>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2">
+                <span className="text-pink-500 font-bold">Date:</span>
+                <span className="text-white">{formatEventDate(selectedEvent)}</span>
+              </div>
+              {selectedEvent.time && (
+                <div className="flex items-start gap-2">
+                  <span className="text-pink-500 font-bold">Time:</span>
+                  <span className="text-white">{selectedEvent.time}</span>
+                </div>
+              )}
+              {selectedEvent.location && (
+                <div className="flex items-start gap-2">
+                  <span className="text-pink-500 font-bold">Location:</span>
+                  <span className="text-white">{selectedEvent.location}</span>
+                </div>
+              )}
+              {selectedEvent.description && (
+                <div className="flex items-start gap-2">
+                  <span className="text-white">{selectedEvent.description}</span>
+                </div>
+              )}
+              {selectedEvent.moreInfoLink && (
+                <div className="flex items-center justify-center gap-2 text-center">
+                  <span className="text-pink-500 font-bold"><a href={selectedEvent.moreInfoLink} target="_blank" rel="noopener noreferrer"><u>MORE</u></a></span>
+                </div>
+              )}
+            </div>
+            <button
+              onClick={closeModal}
+              className="mt-6 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
