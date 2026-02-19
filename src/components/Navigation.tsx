@@ -12,7 +12,13 @@ export function Navigation() {
     "Donate",
     "Design",
   ];
-  const rightButtons = ["News", "Coliseum", "Memorial"];
+
+  const rightButtons = [
+    "News",
+    "Coliseum", 
+    "Memorial",
+    //Socials
+  ];
 
   return (
     <nav className="bg-black border-b-4 border-pink-500 sticky top-0 z-50">
@@ -48,7 +54,7 @@ export function Navigation() {
               let path = "/comingsoonpage";
               if (button === 'News') path = "/news";
               //if (button === 'Coliseum') path = "/coliseum";
-              //if (button === 'Memorial') path = "/memorial";
+              if (button === 'Memorial') path = "/memorial";
               
               return (
                 <Link
