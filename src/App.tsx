@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Home from './Home';
 import Design from './Design';
 import Contact from './Contact';
+import Coliseum from './Coliseum';
 import { ComingSoonPage } from './ComingSoonPage';
 
 function ScrollToTop() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/design" element={<Design />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/coliseum" element={<Coliseum />} />
         <Route path="/comingsoonpage" element={<ComingSoonPage />} />
       </Routes>
     </Router>

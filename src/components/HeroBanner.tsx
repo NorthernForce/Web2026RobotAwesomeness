@@ -37,7 +37,7 @@ export default function HeroBanner() {
           <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-semi-bold mb-4">
             Northern Force
           </h1>
-          <p className="text-pink-500 text-3xl md:text-5xl lg:text-6xl font-semi-bold">
+          <p className="text-[#db3e79] text-3xl md:text-5xl lg:text-6xl font-semi-bold">
             Team 172
           </p>
         </div>

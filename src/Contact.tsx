@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#FF007F] selection:text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
       <Navigation />
       <main>
         <section className="py-24">
@@ -20,17 +20,17 @@ export default function Contact() {
             <form className="space-y-6">
               <div>
                 <label className="block text-sm font-bold uppercase mb-2">Name</label>
-                <input type="text" className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#FF007F] focus:outline-none" />
+                <input type="text" className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none" />
               </div>
               <div>
                 <label className="block text-sm font-bold uppercase mb-2">Email</label>
-                <input type="email" className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#FF007F] focus:outline-none" />
+                <input type="email" className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none" />
               </div>
               <div>
                 <label className="block text-sm font-bold uppercase mb-2">Message</label>
-                <textarea rows={6} className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#FF007F] focus:outline-none"></textarea>
+                <textarea rows={6} className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none"></textarea>
               </div>
-              <button type="submit" className="w-full px-10 py-4 bg-[#FF007F] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,0,127,0.3)]">
+              <button type="submit" className="w-full px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)]">
                 Send Message
               </button>
             </form>
