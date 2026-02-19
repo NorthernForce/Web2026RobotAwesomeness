@@ -31,7 +31,7 @@ export function LinksSection() {
   ];
 
   return (
-    <section className="bg-gray-800 py-16 border-t-4 border-b-4 border-pink-500">
+    <section className="bg-gray-800 py-16 border-t-4 border-b-4 border-[#db3e79]">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-white">
           Quick Links
@@ -41,15 +41,15 @@ export function LinksSection() {
             <a
               key={index}
               href={link.url}
-              className="bg-gray-900 border-2 border-gray-800 hover:border-pink-500 rounded-lg p-6 transition-all hover:scale-105 group"
+              className="bg-gray-900 border-2 border-gray-800 hover:border-[#db3e79] rounded-lg p-6 transition-all hover:scale-105 group"
             >
               <div className="flex items-center justify-between mb-3">
                 {link.isImage ? (
                   <img src={link.icon as string} alt={link.title} className="w-8 h-8 object-contain" />
                 ) : (
-                  <link.icon className="w-8 h-8 text-pink-500" />
+                  <link.icon className="w-8 h-8 text-[#db3e79]" />
                 )}
-                <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-pink-500 transition-colors" />
+                <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-[#db3e79] transition-colors" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-white">
                 {link.title}
