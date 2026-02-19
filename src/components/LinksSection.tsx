@@ -12,8 +12,8 @@ export function LinksSection() {
     },
     {
       title: 'Team Calendar',
-      description: 'View our upcoming events and meetings',
-      url: '#',
+      description: 'View our upcoming events and competitions',
+      url: '/news',
       icon: Calendar,
     },
     {

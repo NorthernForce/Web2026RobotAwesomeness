@@ -46,10 +46,12 @@ export function Navigation() {
           <div className="flex items-center gap-2">
             {rightButtons.map((button) => {
               let path = "/comingsoonpage";
+              if (button === 'News') path = "/news";
               if (button === 'Coliseum') path = "/coliseum";
+              //if (button === 'Memorial') path = "/memorial";
               
               return (
-              <Link
+                <Link
                   key={button}
                   to={path}
                   className="px-4 py-2 text-white hover:text-[#db3e79] transition-colors text-[1.05rem]"
