@@ -44,15 +44,22 @@ export function Navigation() {
 
           {/* Right buttons */}
           <div className="flex items-center gap-2">
-            {rightButtons.map((button) => (
-              <Link
+            {rightButtons.map((button) => {
+              let path = "/comingsoonpage";
+              if (button === 'News') path = "/news";
+              //if (button === 'Coliseum') path = "/coliseum";
+              //if (button === 'Memorial') path = "/memorial";
+              
+              return (
+                <Link
                   key={button}
-                  to="/comingsoonpage"
+                  to={path}
                   className="px-4 py-2 text-white hover:text-pink-500 transition-colors text-[1.05rem]"
                 >
                   {button}
                 </Link>
-            ))}
+              );
+            })}
 
             {/* Social media icons */}
             <div className="flex items-center gap-2 ml-2 pl-2 border-l border-gray-700">
