@@ -7,6 +7,7 @@ import Coliseum from './Coliseum';
 import { ComingSoonPage } from './ComingSoonPage';
 import { NewsPage } from './NewsPage';
 import { MemorialPage } from './MemorialPage';
+import { GalleryPage } from './GalleryPage';
 import { Privacy } from './Privacy';
 import { Sponsorship } from './Sponsorship';
 import { Safety } from './Safety';
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/team" element={<OurTeam />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </Router>
   );
