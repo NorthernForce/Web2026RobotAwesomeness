@@ -1,4 +1,4 @@
-import { ExternalLink, Users, Calendar, BookOpen } from 'lucide-react';
+import { ExternalLink, Users, Calendar, Shrimp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import firstLogo from '/images/first-logo-frc-4.png';
 
@@ -27,12 +27,13 @@ export function LinksSection() {
       isExternal: false,
     },
     {
-      title: 'Resources',
-      description: 'Access team documents and learning materials',
-      url: '/resources',
-      icon: BookOpen,
+      title: 'Photo Gallery',
+      description: 'A pure dump of photos and videos of 172',
+      url: '/gallery',
+      icon: Shrimp,
       isExternal: false,
     },
+    
   ];
 
   return (

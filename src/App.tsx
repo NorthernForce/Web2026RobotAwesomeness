@@ -8,6 +8,7 @@ import { ComingSoonPage } from './ComingSoonPage';
 import { NewsPage } from './NewsPage';
 import { MemorialPage } from './MemorialPage';
 import { HahaUFoundMePage } from './hahaUFoundMePage';
+import { GalleryPage } from './GalleryPage';
 import { Privacy } from './Privacy';
 import { Sponsorship } from './Sponsorship';
 import { Safety } from './Safety';
@@ -44,6 +45,7 @@ export default function App() {
         <Route path="/team" element={<OurTeam />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/easterEgg" element={<HahaUFoundMePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </Router>
   );
