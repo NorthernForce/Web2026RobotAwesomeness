@@ -7,6 +7,10 @@ import Coliseum from './Coliseum';
 import { ComingSoonPage } from './ComingSoonPage';
 import { NewsPage } from './NewsPage';
 import { MemorialPage } from './MemorialPage';
+import { Privacy } from './Privacy';
+import { Sponsorship } from './Sponsorship';
+import { Safety } from './Safety';
+import { Resources } from './Resources';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,6 +34,10 @@ export default function App() {
         <Route path="/comingsoonpage" element={<ComingSoonPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/memorial" element={<MemorialPage />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/sponsorship" element={<Sponsorship />} />
+        <Route path="/safety" element={<Safety />} />
+        <Route path="/resources" element={<Resources />} />
       </Routes>
     </Router>
   );
