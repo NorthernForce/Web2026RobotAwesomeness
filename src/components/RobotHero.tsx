@@ -22,12 +22,12 @@ export function RobotHero() {
             viewport={{ once: true }}
             className="z-10"
           >
-            <div className="inline-block px-3 py-1 bg-[#FF007F] text-black font-black text-xs uppercase tracking-[0.2em] mb-4">
+            <div className="inline-block px-3 py-1 bg-[#af3173] text-black font-black text-xs uppercase tracking-[0.2em] mb-4">
               2025 Competition Build
             </div>
             <h1 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-6">
               Valkyrie <br />
-              <span className="text-[#FF007F]">MK-IV</span>
+              <span className="text-[#af3173]">MK-IV</span>
             </h1>
             <p className="text-zinc-400 text-lg max-w-lg mb-10 leading-relaxed">
               Engineered for high-velocity precision. The Valkyrie MK-IV features our most advanced intake system yet, designed to handle game pieces with clinical accuracy in the heat of competition.
@@ -49,7 +49,7 @@ export function RobotHero() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="absolute -inset-4 border-2 border-[#FF007F] opacity-20 -rotate-2"></div>
+            <div className="absolute -inset-4 border-2 border-[#af3173] opacity-20 -rotate-2"></div>
             <div className="relative aspect-[4/5] bg-zinc-900 overflow-hidden">
               <ImageWithFallback 
                 src="https://images.unsplash.com/photo-1742767069929-0c663150b164?auto=format&fit=crop&q=80&w=800"
@@ -57,7 +57,7 @@ export function RobotHero() {
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent">
-                <p className="text-[#FF007F] font-black text-4xl italic">172</p>
+                <p className="text-[#af3173] font-black text-4xl italic">172</p>
               </div>
             </div>
           </motion.div>

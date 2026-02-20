@@ -8,13 +8,13 @@ export function RobotFeatures() {
     {
       title: "Advanced Perception",
       desc: "Dual-core vision processing using machine learning to identify game pieces in real-time.",
-      icon: <Cpu className="text-[#FF007F]" size={32} />,
+      icon: <Cpu className="text-[#af3173]" size={32} />,
       img: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=600"
     },
     {
       title: "Swerve Drive",
       desc: "Independent 4-wheel steering allowing for 360° translation and rotation simultaneously.",
-      icon: <Zap className="text-[#FF007F]" size={32} />,
+      icon: <Zap className="text-[#af3173]" size={32} />,
       img: "https://images.unsplash.com/photo-1648765334009-75e33eed0e1d?auto=format&fit=crop&q=80&w=600"
     }
   ];
@@ -33,7 +33,7 @@ export function RobotFeatures() {
             >
               <div className="flex-1 space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-4 bg-zinc-900 border border-[#FF007F]/30 rounded-full">
+                  <div className="p-4 bg-zinc-900 border border-[#af3173]/30 rounded-full">
                     {feature.icon}
                   </div>
                   <h3 className="text-3xl font-black text-white uppercase tracking-tighter">{feature.title}</h3>
@@ -43,11 +43,11 @@ export function RobotFeatures() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 bg-[#FF007F]"></div>
+                    <div className="w-1.5 h-1.5 bg-[#af3173]"></div>
                     Custom fabricated components
                   </li>
                   <li className="flex items-center gap-3 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 bg-[#FF007F]"></div>
+                    <div className="w-1.5 h-1.5 bg-[#af3173]"></div>
                     Rigorous stress testing
                   </li>
                 </ul>

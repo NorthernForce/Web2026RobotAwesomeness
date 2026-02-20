@@ -10,8 +10,8 @@ export function ComingSoonPage() {
       <div className="flex items-center justify-center bg-black px-4 py-16">
         <div className="max-w-2xl text-center">
           <div className="mb-8 flex justify-center">
-            <div className="bg-pink-500/20 p-6 rounded-full">
-              <Clock className="w-20 h-20 text-pink-500" />
+            <div className="bg-[#db3e79]/20 p-6 rounded-full">
+              <Clock className="w-20 h-20 text-[#db3e79]" />
             </div>
           </div>
           
@@ -23,8 +23,8 @@ export function ComingSoonPage() {
             We're working hard to bring you something amazing. Stay tuned!
           </p>
           
-          <div className="border-t-2 border-pink-500 pt-8">
-            <p className="text-pink-500 text-lg font-semibold">
+          <div className="border-t-2 border-[#db3e79] pt-8">
+            <p className="text-[#db3e79] text-lg font-semibold">
               Northern Force - Team 172
             </p>
           </div>

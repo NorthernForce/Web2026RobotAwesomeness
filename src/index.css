@@ -8,20 +8,20 @@ body {
 /* Swiper navigation arrows - pink styling */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ec4899 !important;
+  color: #db3e79 !important;
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  color: #ec4899 !important;
+  color: #db3e79 !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #db2777 !important;
+  color: #ab305e !important;
 }
 
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-  color: #db2777 !important;
+  color: #ab305e !important;
 }
