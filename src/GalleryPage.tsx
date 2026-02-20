@@ -100,7 +100,7 @@ export function GalleryPage() {
   return (
     <>
     <Navigation />
-    <div className="min-h-screen bg-black text-white pt-32 pb-16">
+    <div className="min-h-screen bg-black text-white" style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -181,7 +181,7 @@ export function GalleryPage() {
         )}
       </div>
     </div>
-    
+
     <LinksSection />
     <Footer />
     </>
