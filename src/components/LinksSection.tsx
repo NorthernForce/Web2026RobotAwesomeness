@@ -22,7 +22,7 @@ export function LinksSection() {
     {
       title: 'Join Our Team',
       description: 'Interested in joining Northern Force?',
-      url: '#',
+      url: '/contact',
       icon: Users,
       isExternal: false,
     },

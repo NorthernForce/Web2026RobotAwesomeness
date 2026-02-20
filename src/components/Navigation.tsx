@@ -30,6 +30,8 @@ export function Navigation() {
               let path = "/comingsoonpage";
               if (button === 'Design') path = "/design";
               if (button === 'Contact') path = "/contact";
+              if (button === 'Our Team') path = "/team";
+              if (button === 'Donate') path = "/donate";
               
               return (
                 <Link

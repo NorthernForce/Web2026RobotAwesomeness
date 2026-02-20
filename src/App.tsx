@@ -12,6 +12,8 @@ import { Privacy } from './Privacy';
 import { Sponsorship } from './Sponsorship';
 import { Safety } from './Safety';
 import { Resources } from './Resources';
+import { OurTeam } from './OurTeam';
+import { Donate } from './Donate';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -39,6 +41,8 @@ export default function App() {
         <Route path="/sponsorship" element={<Sponsorship />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/team" element={<OurTeam />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </Router>

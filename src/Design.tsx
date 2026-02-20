@@ -2,6 +2,7 @@ import { Navigation } from './components/Navigation';
 import { RobotHero } from './components/RobotHero';
 import { RobotFeatures } from './components/RobotFeatures';
 import { Footer } from './components/Footer';
+import { LinksSection } from './components/LinksSection';
 
 export default function Design() {
   return (
@@ -43,7 +44,8 @@ export default function Design() {
           </div>
         </section>
       </main>
-
+      
+      <LinksSection />
       <Footer />   
       
       

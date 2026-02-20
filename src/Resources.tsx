@@ -8,27 +8,27 @@ export function Resources() {
       category: 'Learning Materials',
       icon: BookOpen,
       items: [
-        { title: 'Robot Design Principles', description: 'Introduction to mechanical and electrical design' },
-        { title: 'Programming Guide', description: 'Software development resources for FRC' },
-        { title: 'Pneumatics Reference', description: 'Air system design and implementation' },
+        { title: 'Robot Design Principles', description: 'Introduction to mechanical and electrical design', url: '#' },
+        { title: 'Programming Guide', description: 'Software development resources for FRC', url: '#' },
+        { title: 'Pneumatics Reference', description: 'Air system design and implementation', url: '#' },
       ],
     },
     {
       category: 'Documentation',
       icon: FileText,
       items: [
-        { title: 'Design Specifications', description: 'Technical documentation for current season' },
-        { title: 'Meeting Notes', description: 'Strategic planning and progress updates' },
-        { title: 'Safety Procedures', description: 'Detailed safety guidelines and protocols' },
+        { title: 'Design Specifications', description: 'Technical documentation for current season', url: '#' },
+        { title: 'Meeting Notes', description: 'Strategic planning and progress updates', url: '#' },
+        { title: 'Safety Procedures', description: 'Detailed safety guidelines and protocols', url: '#' },
       ],
     },
     {
       category: 'External Links',
       icon: LinkIcon,
       items: [
-        { title: 'FIRST Robotics Official', description: 'Official FIRST Robotics Competition site' },
-        { title: 'The Blue Alliance', description: 'Event results and team data' },
-        { title: 'Chief Delphi Forums', description: 'Community discussion and collaboration' },
+        { title: 'FIRST Robotics Official', description: 'Official FIRST Robotics Competition site', url: 'https://www.firstinspires.org' },
+        { title: 'The Blue Alliance', description: 'Event results and team data', url: 'https://www.thebluealliance.com/team/172' },
+        { title: 'Chief Delphi Forums', description: 'Community discussion and collaboration', url: 'https://www.chiefdelphi.com' },
       ],
     },
   ];
@@ -64,7 +64,14 @@ export function Resources() {
                     {section.items.map((item, itemIdx) => (
                       <a
                         key={itemIdx}
-                        href="#"
+                        href={item.url}
+                        onClick={(e) => {
+                          if (item.url === '#') {
+                            e.preventDefault();
+                          }
+                        }}
+                        target={item.url.startsWith('http') ? '_blank' : undefined}
+                        rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="bg-gray-900 border border-gray-800 p-4 rounded-lg hover:border-[#db3e79] transition-colors group"
                       >
                         <div className="flex items-start justify-between gap-3">
