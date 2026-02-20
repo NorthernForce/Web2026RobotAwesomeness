@@ -17,39 +17,19 @@ export default function Coliseum() {
         </section>
 
         {/* Overview Section */}
-        <section className="py-24 px-4 border-b border-zinc-900">
+        <section className="py-24 px-4 border-b border-zinc-600">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">Home of Northern Force</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <p className="text-lg text-zinc-300 leading-relaxed mb-6">
-                  The Coliseum serves as the headquarters for Northern Force Robotics Team 172. Our state-of-the-art facility provides everything we need to design, build, and test cutting-edge FIRST robots.
-                </p>
-                <p className="text-lg text-zinc-300 leading-relaxed">
-                  From our machining workshop to our electronics lab, every corner of the Coliseum is dedicated to innovation and excellence in robotics engineering.
-                </p>
-              </div>
-              <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg">
-                <h3 className="text-2xl font-black uppercase mb-6 text-[#db3e79]">Key Features</h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#db3e79] font-black text-lg mt-1">✦</span>
-                    <span>Advanced machining and fabrication equipment</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#db3e79] font-black text-lg mt-1">✦</span>
-                    <span>Dedicated electronics and programming lab</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#db3e79] font-black text-lg mt-1">✦</span>
-                    <span>Testing arena for prototype validation</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-[#db3e79] font-black text-lg mt-1">✦</span>
-                    <span>Collaborative workspace for team members</span>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <p className="text-lg text-zinc-300 leading-relaxed mb-6">
+                The Coliseum serves as the headquarters for Northern Force Robotics Team 172.
+                The STEM Coliseum and Robotics Learning Center, with its mechatronics-related programs and resources, robotics competition arena, FAB and additive manufacturing labs, precision machine shop, CAD and AI computer labs, and team manufacturing spaces, has evolved into Maine's largest non-profit provider of STEM robotics-related experiences, and build and learning resources. 
+                Our vision is to inspire Maine young people to be Maine's future innovators, creators, entrepreneurs, and leaders, through cost-effective, mentor-led, experiential programs, workshops, and competitions, while cultivating workforce readiness demonstrable to schools and employers through a standardized digital learning transcript of the student's concept and skill mastery built over their time spent with us. 
+                By giving students access to industrial quality resources, presenting them with challenging STEM problems, and allowing them to work with experienced STEM industry mentors, educators, and businesspeople, the STEM Coliseum and its partners give students early exposure to the professional world of STEM and enterprise. 
+                As a student-driven learning center, we offer a unique perspective to exposing students to engaging STEM and robotics activities that provide academic enrichment, fun, and 21st century skills for workforce readiness not found in the public-school setting. 
+                We provide cost-effective access to competitive practice space, classrooms, precision machinery, and specialized resources and after school programs for Maine youth while attracting STEM practitioners, teachers, and industry mentors from diverse communities to create innovative STEM & Robotics programs sharable throughout Maine. 
+                Our 24,000 Sq. Ft. facility offers FIRST and VEX Robotics competition fields, as well as Drone flight decks, LEGO Robotics playing fields, and BattleBot arenas. We offer labs dedicated to CAD design, AI, coding, and electronics, as well as a makerspace, FAB lab, machine shop, and conference and classrooms.
+              </p>
             </div>
           </div>
         </section>
