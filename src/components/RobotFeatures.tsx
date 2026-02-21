@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImageWithFallback } from './ImagewithFallback';
 import { motion } from 'motion/react';
 import { Cpu, Zap } from 'lucide-react';
