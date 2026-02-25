@@ -17,13 +17,13 @@ export function GalleryPage() {
     'IMG_5080.JPG', 'IMG_5082.JPG', 'IMG_5083.JPG', 'IMG_5084.JPG',
     'IMG_5085.JPG', 'IMG_5088.JPG', 'IMG_5089.JPG',
     'IMG_5090.JPG', 'IMG_5091.JPG', 'IMG_5092.JPG', 'IMG_5093.JPG', 'IMG_5094.JPG',
-    'IMG_5096.JPG', 'IMG_5097.JPG', 'IMG_5098.JPG', 'IMG_5099.JPG',
+    'IMG_5096.JPG', 'IMG_5097.JPG', 'IMG_5099.JPG',
     'IMG_5100.JPG', 'IMG_5102.JPG', 'IMG_5103.JPG', 'IMG_5104.JPG',
-    'IMG_5105.JPG', 'IMG_5106.JPG', 'IMG_5107.JPG', 'IMG_5108.JPG', 'IMG_5109.JPG',
+    'IMG_5107.JPG', 'IMG_5108.JPG', 'IMG_5109.JPG',
     'IMG_5110.JPG', 'IMG_5111.JPG', 'IMG_5112.JPG', 'IMG_5114.JPG',
     'IMG_5115.JPG', 'IMG_5116.JPG', 'IMG_5118.JPG', 'IMG_5119.JPG',
     'IMG_5120.JPG', 'IMG_5121.JPG', 'IMG_5122.JPG', 'IMG_5123.JPG', 'IMG_5124.JPG',
-    'IMG_5125.JPG', 'IMG_5126.JPG', 'IMG_5127.JPG', 'IMG_5128.JPG', 'IMG_5129.JPG',
+    'IMG_5126.JPG', 'IMG_5127.JPG', 'IMG_5129.JPG',
     'IMG_5132.JPG', 'IMG_5133.JPG', 'IMG_5134.JPG', 'IMG_5135.JPG', 'IMG_5136.JPG',
     'IMG_5137.JPG', 'IMG_5138.JPG', 'IMG_5139.JPG', 'IMG_5140.JPG', 'IMG_5141.JPG',
     'IMG_5142.JPG', 'IMG_5143.JPG', 'IMG_5144.JPG', 'IMG_5145.JPG', 'IMG_5146.JPG',
@@ -69,7 +69,8 @@ export function GalleryPage() {
     <Navigation />
     <div className="min-h-screen bg-black text-white" style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center">Photo Gallery</h2>
+        <h2 className="text-4xl font-bold mb-4 text-center">Photo Gallery</h2>
+        <div className="w-60 h-1 bg-pink-500 mx-auto mb-8"></div>
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPhotos.map((photo) => (

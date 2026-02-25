@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import printer from '../../public/images/Gallery Photos/IMG_5094.jpg';
-import group from '../../public/images/Gallery Photos/IMG_5086.jpg'; // Replace with actual group photo
+import group from '../../public/images/Gallery Photos/IMG_5103.jpg'; // Replace with actual group photo
 import robot from '../../public/images/Gallery Photos/IMG_5136.jpg';
 
 
