@@ -4,42 +4,52 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+import { useRef } from 'react';
 
 interface Photo {
   id: number;
   url: string;
 }
 
+
+
 export function GalleryPage() {
+  const photosRef = useRef<HTMLDivElement | null>(null); 
+  const videosRef = useRef<HTMLDivElement | null>(null);
+
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
-  const imageFileNames = [
-    'IMG_5080.JPG', 'IMG_5082.JPG', 'IMG_5083.JPG', 'IMG_5084.JPG',
-    'IMG_5085.JPG', 'IMG_5088.JPG', 'IMG_5089.JPG',
-    'IMG_5090.JPG', 'IMG_5091.JPG', 'IMG_5092.JPG', 'IMG_5093.JPG', 'IMG_5094.JPG',
-    'IMG_5096.JPG', 'IMG_5097.JPG', 'IMG_5099.JPG',
-    'IMG_5100.JPG', 'IMG_5102.JPG', 'IMG_5103.JPG', 'IMG_5104.JPG',
-    'IMG_5107.JPG', 'IMG_5108.JPG', 'IMG_5109.JPG',
-    'IMG_5110.JPG', 'IMG_5111.JPG', 'IMG_5112.JPG', 'IMG_5114.JPG',
-    'IMG_5115.JPG', 'IMG_5116.JPG', 'IMG_5118.JPG', 'IMG_5119.JPG',
-    'IMG_5120.JPG', 'IMG_5121.JPG', 'IMG_5122.JPG', 'IMG_5123.JPG', 'IMG_5124.JPG',
-    'IMG_5126.JPG', 'IMG_5127.JPG', 'IMG_5129.JPG',
-    'IMG_5132.JPG', 'IMG_5133.JPG', 'IMG_5134.JPG', 'IMG_5135.JPG', 'IMG_5136.JPG',
-    'IMG_5137.JPG', 'IMG_5138.JPG', 'IMG_5139.JPG', 'IMG_5140.JPG', 'IMG_5141.JPG',
-    'IMG_5142.JPG', 'IMG_5143.JPG', 'IMG_5144.JPG', 'IMG_5145.JPG', 'IMG_5146.JPG',
-    'IMG_5147.JPG', 'IMG_5148.JPG', 'IMG_5149.JPG', 'IMG_5150.JPG', 'IMG_5151.JPG',
-    'IMG_5152.JPG', 'IMG_5153.JPG', 'IMG_5154.JPG', 'IMG_5155.JPG', 'IMG_5156.JPG',
-    'IMG_5157.JPG', 'IMG_5158.JPG', 'IMG_5159.JPG', 'IMG_5160.JPG', 'IMG_5161.JPG',
-    'IMG_5162.JPG', 'IMG_5163.JPG', 'IMG_5164.JPG', 'IMG_5165.JPG', 'IMG_5166.JPG',
-    'IMG_5167.JPG',
-  ];
+  // Dynamically load all images from Gallery Photos folder
+  const imageModules = import.meta.glob('/public/images/Gallery Photos/*', { eager: true });
+  const imagePaths = Object.keys(imageModules)
+    .filter(path => /\.(jpg|jpeg|png|gif|webp)$/i.test(path))
+    .map(path => path.replace('/public', ''))
+    .sort();
 
-  const photos = imageFileNames.map((fileName, index) => ({
+  const photos = imagePaths.map((path, index) => ({
     id: index,
-    url: `/images/Gallery%20Photos/${fileName}`,
+    url: path,
   }));
 
   const filteredPhotos = photos;
+
+  // Dynamically load all videos from Gallery Videos folder
+  const videoModules = import.meta.glob('/public/images/Gallery Videos/*', { eager: true });
+  const videoPaths = Object.keys(videoModules)
+    .filter(path => /\.(mp4|webm|mov|avi|mkv)$/i.test(path))
+    .map(path => path.replace('/public', ''))
+    .sort();
+
+  const videos = videoPaths.map((path, index) => {
+    // Extract filename without extension for title
+    const fileName = path.split('/').pop() || '';
+    const title = fileName.replace(/\.[^/.]+$/, '').replace(/_/g, ' ');
+    return {
+      id: index,
+      url: path,
+      title: title,
+    };
+  });
 
   const openLightbox = (photo: Photo) => {
     setSelectedPhoto(photo);
@@ -63,14 +73,68 @@ export function GalleryPage() {
     
     setSelectedPhoto(filteredPhotos[newIndex]);
   };
+// Scroll functions for Photos and Videos sections
+  const scrollToPhotos = () => {
+    if (!photosRef.current) return;
+    const y = photosRef.current.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
+  const scrollToVideos = () => {
+    if (!videosRef.current) return;
+    const y = videosRef.current.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
 
   return (
     <>
     <Navigation />
+
+    {/* Side Navigation Buttons */}
+    <div className="fixed top-1/2 right-6 -translate-y-1/2 flex flex-col gap-10 z-50 text-white text-4xl">
+      <button
+        onClick={scrollToPhotos}
+        className="px-10 py-5 
+                  rounded-2xl 
+                  bg-pink-600 
+                  text-white 
+                  font-bold 
+                  shadow-[0_0_15px_rgba(236,72,153,0.8)] 
+                  hover:shadow-[0_0_25px_rgba(236,72,153,1)] 
+                  hover:bg-pink-500 
+                  border-4 
+                  border-pink-400 
+                  transition-all 
+                  duration-300"
+      >
+        Photos
+      </button>
+
+      <button
+        onClick={scrollToVideos}
+        className="px-10 py-5 
+                  rounded-2xl 
+                  bg-pink-600 
+                  text-white 
+                  font-bold 
+                  shadow-[0_0_15px_rgba(236,72,153,0.8)] 
+                  hover:shadow-[0_0_25px_rgba(236,72,153,1)] 
+                  hover:bg-pink-500 
+                  border-4 
+                  border-pink-400 
+                  transition-all 
+                  duration-300"
+      >
+        Videos
+      </button>
+    </div>
+
     <div className="min-h-screen bg-black text-white" style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-4 text-center">Photo Gallery</h2>
+      <div className="max-w-7xl mx-auto px-4" ref={photosRef}>
+        <h2 className="text-4xl font-bold mb-4 text-center">Photos</h2>
         <div className="w-60 h-1 bg-pink-500 mx-auto mb-8"></div>
+
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPhotos.map((photo) => (
@@ -87,6 +151,34 @@ export function GalleryPage() {
             </div>
           ))}
         </div>
+
+        {/* Videos Section */}
+        {videos.length > 0 && (
+          <div className="mt-16" ref={videosRef}>
+            <h3 className="text-3xl font-bold mb-4 text-center">Videos</h3>
+            <div className="w-52 h-1 bg-pink-500 mx-auto mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos.map((video) => (
+                <div
+                  key={video.id}
+                  className="group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-pink-500 transition-all"
+                >
+                  <div className="relative aspect-video bg-gray-900">
+                    <video
+                      src={video.url}
+                      controls
+                      className="w-full h-full object-cover"
+                      controlsList="nodownload"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
+                    <p className="text-sm font-semibold truncate">{video.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Lightbox Modal */}
         {selectedPhoto && (
