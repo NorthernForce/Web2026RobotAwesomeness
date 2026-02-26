@@ -4,75 +4,52 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+import { useRef } from 'react';
 
 interface Photo {
   id: number;
   url: string;
-  title?: string;
-  date: string;
 }
 
+
+
 export function GalleryPage() {
+  const photosRef = useRef<HTMLDivElement | null>(null); 
+  const videosRef = useRef<HTMLDivElement | null>(null);
+
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
-  const photos: Photo[] = [
-    {
-      id: 1,
-      url: 'https://images.unsplash.com/photo-1768796371633-ba921e535c48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljcyUyMHRlYW0lMjBjb21wZXRpdGlvbiUyMHdvcmtzaG9wfGVufDF8fHx8MTc3MTYxODQ1MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Regional Competition 2026',
-      date: 'March 2026',
-    },
-    {
-      id: 2,
-      url: 'https://images.unsplash.com/photo-1755053757912-a63da9d6e0e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdoJTIwc2Nob29sJTIwc3R1ZGVudHMlMjBidWlsZGluZyUyMHJvYm90fGVufDF8fHx8MTc3MTYxODQ1MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Build Season 2026',
-      date: 'January 2026',
-    },
-    {
-      id: 3,
-      url: 'https://images.unsplash.com/photo-1581916102388-eae1149ca53f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdCUyMG1lY2hhbmljYWwlMjBwYXJ0cyUyMGdlYXJzfGVufDF8fHx8MTc3MTYxODQ1MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Robot Mechanism Detail',
-      date: 'February 2026',
-    },
-    {
-      id: 4,
-      url: 'https://images.unsplash.com/photo-1643732774973-ff2d0e610d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY2lyY3VpdCUyMGJvYXJkJTIwZWxlY3Ryb25pY3N8ZW58MXx8fHwxNzcxNTUxNDc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Electronics Assembly',
-      date: 'January 2026',
-    },
-    {
-      id: 5,
-      url: 'https://images.unsplash.com/photo-1759446334429-bb1f2d1d9f13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY2VsZWJyYXRpb24lMjB0cm9waHklMjBhd2FyZHxlbnwxfHx8fDE3NzE2MTg0NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Championship Victory',
-      date: 'April 2025',
-    },
-    {
-      id: 6,
-      url: 'https://images.unsplash.com/photo-1745449064670-94bd0fc13df8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmdpbmVlcmluZyUyMHdvcmtzaG9wJTIwdG9vbHN8ZW58MXx8fHwxNzcxNjE4NDUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Workshop Tools',
-      date: 'December 2025',
-    },
-    {
-      id: 7,
-      url: 'https://images.unsplash.com/photo-1758270705317-3ef6142d306f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHRlYW13b3JrJTIwY29sbGFib3JhdGlvbiUyMHByb2plY3R8ZW58MXx8fHwxNzcxNTEzMDAyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Team Collaboration',
-      date: 'November 2025',
-    },
-    {
-      id: 8,
-      url: 'https://images.unsplash.com/photo-1705579609431-a07e6c4b149b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xkZXJpbmclMjBlbGVjdHJvbmljcyUyMGNsb3NldXB8ZW58MXx8fHwxNzcxNjE4NDU1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Precision Soldering',
-      date: 'January 2026',
-    },
-    {
-      id: 9,
-      url: 'https://images.unsplash.com/photo-1768323102303-62da2858bd5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWNoYW5pY2FsJTIwcm9ib3QlMjBhcm0lMjBkZXNpZ258ZW58MXx8fHwxNzcxNjE4NDU1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Robot Arm Assembly',
-      date: 'February 2026',
-    },
-  ];
+  // Dynamically load all images from Gallery Photos folder
+  const imageModules = import.meta.glob('/public/images/Gallery Photos/*', { eager: true });
+  const imagePaths = Object.keys(imageModules)
+    .filter(path => /\.(jpg|jpeg|png|gif|webp)$/i.test(path))
+    .map(path => path.replace('/public', ''))
+    .sort();
+
+  const photos = imagePaths.map((path, index) => ({
+    id: index,
+    url: path,
+  }));
 
   const filteredPhotos = photos;
+
+  // Dynamically load all videos from Gallery Videos folder
+  const videoModules = import.meta.glob('/public/images/Gallery Videos/*', { eager: true });
+  const videoPaths = Object.keys(videoModules)
+    .filter(path => /\.(mp4|webm|mov|avi|mkv)$/i.test(path))
+    .map(path => path.replace('/public', ''))
+    .sort();
+
+  const videos = videoPaths.map((path, index) => {
+    // Extract filename without extension for title
+    const fileName = path.split('/').pop() || '';
+    const title = fileName.replace(/\.[^/.]+$/, '').replace(/_/g, ' ');
+    return {
+      id: index,
+      url: path,
+      title: title,
+    };
+  });
 
   const openLightbox = (photo: Photo) => {
     setSelectedPhoto(photo);
@@ -96,20 +73,67 @@ export function GalleryPage() {
     
     setSelectedPhoto(filteredPhotos[newIndex]);
   };
+// Scroll functions for Photos and Videos sections
+  const scrollToPhotos = () => {
+    if (!photosRef.current) return;
+    const y = photosRef.current.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
+  const scrollToVideos = () => {
+    if (!videosRef.current) return;
+    const y = videosRef.current.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
 
   return (
     <>
     <Navigation />
+
+    {/* Side Navigation Buttons */}
+    <div className="fixed top-1/2 right-6 -translate-y-1/2 flex flex-col gap-10 z-50 text-white text-4xl">
+      <button
+        onClick={scrollToPhotos}
+        className="px-10 py-5 
+                  rounded-2xl 
+                  bg-pink-600 
+                  text-white 
+                  font-bold 
+                  shadow-[0_0_15px_rgba(236,72,153,0.8)] 
+                  hover:shadow-[0_0_25px_rgba(236,72,153,1)] 
+                  hover:bg-pink-500 
+                  border-4 
+                  border-pink-400 
+                  transition-all 
+                  duration-300"
+      >
+        Photos
+      </button>
+
+      <button
+        onClick={scrollToVideos}
+        className="px-10 py-5 
+                  rounded-2xl 
+                  bg-pink-600 
+                  text-white 
+                  font-bold 
+                  shadow-[0_0_15px_rgba(236,72,153,0.8)] 
+                  hover:shadow-[0_0_25px_rgba(236,72,153,1)] 
+                  hover:bg-pink-500 
+                  border-4 
+                  border-pink-400 
+                  transition-all 
+                  duration-300"
+      >
+        Videos
+      </button>
+    </div>
+
     <div className="min-h-screen bg-black text-white" style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Photo Gallery</h1>
-          <div className="w-32 h-1 bg-pink-500 mx-auto mb-6"></div>
-          <p className="text-gray-400 text-xl">
-            Capturing our journey in robotics
-          </p>
-        </div>
+      <div className="max-w-7xl mx-auto px-4" ref={photosRef}>
+        <h2 className="text-4xl font-bold mb-4 text-center">Photos</h2>
+        <div className="w-60 h-1 bg-pink-500 mx-auto mb-8"></div>
 
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -121,12 +145,40 @@ export function GalleryPage() {
             >
               <ImageWithFallback
                 src={photo.url}
-                alt={photo.title}
+                alt="Gallery photo"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
           ))}
         </div>
+
+        {/* Videos Section */}
+        {videos.length > 0 && (
+          <div className="mt-16" ref={videosRef}>
+            <h3 className="text-3xl font-bold mb-4 text-center">Videos</h3>
+            <div className="w-52 h-1 bg-pink-500 mx-auto mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos.map((video) => (
+                <div
+                  key={video.id}
+                  className="group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-pink-500 transition-all"
+                >
+                  <div className="relative aspect-video bg-gray-900">
+                    <video
+                      src={video.url}
+                      controls
+                      className="w-full h-full object-cover"
+                      controlsList="nodownload"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
+                    <p className="text-sm font-semibold truncate">{video.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Lightbox Modal */}
         {selectedPhoto && (
@@ -172,7 +224,7 @@ export function GalleryPage() {
               <div className="relative">
                 <ImageWithFallback
                   src={selectedPhoto.url}
-                  alt={selectedPhoto.title}
+                  alt="Gallery photo"
                   className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
                 />
               </div>

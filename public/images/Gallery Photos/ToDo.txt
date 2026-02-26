@@ -1,5 +1,0 @@
-TO DO
-- team photo
-- get photos
-- create folders within page
-- collage of photos
