@@ -11,6 +11,7 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h1 className="text-5xl font-black uppercase tracking-tighter mb-8">Contact Us</h1>
             <p className="text-xl text-gray-400 mb-12">Get in touch with Northern Force Robotics. We'd bee boop to hear from you!</p>
+            <p className="text-xl text-gray-400 mb-12"><a href="tel:2076327108">(207) 632-7108</a></p>
           </div>
         </section>
 

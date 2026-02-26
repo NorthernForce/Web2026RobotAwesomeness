@@ -8,17 +8,31 @@ export function OurTeam() {
     {
       icon: Users,
       title: 'Our Membership',
-      description: 'Northern Force is a dedicated team of students passionate about robotics, engineering, and innovation. We welcome members from all backgrounds and skill levels.',
+      description: [
+        'Students from Falmouth High School and Gorham High School',
+        'Founded in 1996 with 28 students and 15 mentors',
+        'Dedicated to teaching STEM and problem-solving skills',
+        'Values gracious professionalism and STEM education',
+      ],
     },
     {
       icon: Target,
       title: 'Our Mission',
-      description: 'To inspire and develop STEM leaders through competition, collaboration, and creative problem-solving in the FIRST Robotics program.',
+      description: [
+        'Inspire young people to be innovators, creators, entrepreneurs, and leaders',
+        'Provide cost-effective, mentor-led experiential programs and competitions',
+        'Cultivate workforce readiness for the benefit of Maine\'s future',
+      ],
     },
     {
       icon: Heart,
       title: 'Our Values',
-      description: 'Excellence, teamwork, safety, and community. We believe in lifting each other up and celebrating both victories and learning opportunities.',
+      description: [
+        'Create STEM Career Awareness and Readiness In Maine',
+        'Empower Students To Customize Their STEM Experiential Learning',
+        'Mimic Industry in Organization, Management, And Mentoring Focus',
+        'Exemplify STEM\'s Ability to Help Our Community',
+      ],
     },
   ];
 
@@ -48,7 +62,18 @@ export function OurTeam() {
                   <div key={idx} className="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-[#db3e79] transition-colors">
                     <IconComponent className="w-12 h-12 text-[#db3e79] mb-4" />
                     <h3 className="text-xl font-bold text-white mb-3">{highlight.title}</h3>
-                    <p className="text-gray-400">{highlight.description}</p>
+                    {Array.isArray(highlight.description) ? (
+                      <ul className="text-gray-400 space-y-2">
+                        {highlight.description.map((item, itemIdx) => (
+                          <li key={itemIdx} className="flex items-start">
+                            <span className="text-[#db3e79] mr-3">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-400">{highlight.description}</p>
+                    )}
                   </div>
                 );
               })}
