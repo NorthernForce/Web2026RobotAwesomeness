@@ -18,10 +18,10 @@ body {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #ab305e !important;
+  color: #db3e79 !important;
 }
 
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-  color: #ab305e !important;
+  color: #db3e79 !important;
 }
