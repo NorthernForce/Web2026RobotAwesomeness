@@ -3,9 +3,9 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import printer from '../../public/images/Gallery Photos/IMG_5094.jpg';
-import group from '../../public/images/Gallery Photos/IMG_5103.jpg'; // Replace with actual group photo
-import robot from '../../public/images/Gallery Photos/IMG_5136.jpg';
+import printer from '../../public/images/Gallery Photos/2026/IMG_5094.jpg';
+import group from '../../public/images/Gallery Photos/2026/IMG_5103.jpg';
+import robot from '../../public/images/Gallery Photos/2026/IMG_5136.jpg';
 
 
 export default function HeroBanner() {

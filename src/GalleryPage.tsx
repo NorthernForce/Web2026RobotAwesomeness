@@ -5,6 +5,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
 import { useRef } from 'react';
+import { FolderClosed } from "lucide-react";
 
 interface Photo {
   id: number;
@@ -17,10 +18,33 @@ export function GalleryPage() {
   const photosRef = useRef<HTMLDivElement | null>(null); 
   const videosRef = useRef<HTMLDivElement | null>(null);
 
+  const [activeFolder, setActiveFolder] = useState<string | null>(null);
+
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   // Dynamically load all images from Gallery Photos folder
-  const imageModules = import.meta.glob('/public/images/Gallery Photos/*', { eager: true });
+  const imageModules = import.meta.glob('/public/images/Gallery Photos/**/*', { eager: true });
+
+  const folderMap: Record<string, Photo[]> = {};
+
+  Object.keys(imageModules)
+    .filter(path => /\.(jpg|jpeg|png|gif|webp)$/i.test(path))
+    .forEach((path, index) => {
+      const cleanPath = path.replace('/public', '');
+      const parts = cleanPath.split('/');
+
+      // Folder name is the second-to-last part
+      // e.g. /public/images/Gallery Photos/2026/photo.jpg
+      const folderName = parts[parts.length - 2];
+
+      if (!folderMap[folderName]) folderMap[folderName] = [];
+
+      folderMap[folderName].push({
+        id: index,
+        url: cleanPath,
+      });
+  });
+
   const imagePaths = Object.keys(imageModules)
     .filter(path => /\.(jpg|jpeg|png|gif|webp)$/i.test(path))
     .map(path => path.replace('/public', ''))
@@ -135,22 +159,54 @@ export function GalleryPage() {
         <h2 className="text-4xl font-bold mb-4 text-center">Photos</h2>
         <div className="w-60 h-1 bg-pink-500 mx-auto mb-8"></div>
 
+        {/* Folder Grid */}
+        {!activeFolder && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.keys(folderMap).sort().map(folder => (
+              <div
+                key={folder}
+                onClick={() => setActiveFolder(folder)}
+                className="group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-pink-500 transition-all cursor-pointer aspect-square flex flex-col items-center justify-center gap-4"
+              >
+                <FolderClosed className="w-20 h-20 text-pink-400 group-hover:text-pink-500 transition-colors" />
+
+                <p className="text-2xl font-bold text-center">
+                  {folder}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+
         {/* Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPhotos.map((photo) => (
-            <div
-              key={photo.id}
-              onClick={() => openLightbox(photo)}
-              className="group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-pink-500 transition-all cursor-pointer aspect-square"
+        {activeFolder && (
+          <>
+            <h3 className="text-3xl font-bold mb-4 text-center">{activeFolder}</h3>
+            <button
+              onClick={() => setActiveFolder(null)}
+              className="mb-6 px-6 py-3 bg-pink-600 rounded-lg"
             >
-              <ImageWithFallback
-                src={photo.url}
-                alt="Gallery photo"
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
+              Back to Folders
+            </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {folderMap[activeFolder].map(photo => (
+                <div
+                  key={photo.id}
+                  onClick={() => openLightbox(photo)}
+                  className="group relative overflow-hidden rounded-lg border-2 border-gray-800 hover:border-pink-500 transition-all cursor-pointer aspect-square"
+                >
+                  <ImageWithFallback
+                    src={photo.url}
+                    alt="Gallery photo"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
 
         {/* Videos Section */}
         {videos.length > 0 && (
