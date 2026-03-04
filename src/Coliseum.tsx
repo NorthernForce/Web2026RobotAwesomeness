@@ -1,6 +1,9 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+import colesium1 from '../public/images/Gallery Photos/2026/IMG_5121.jpg';
+import colesium2 from '../public/images/Gallery Photos/2026/IMG_5122.jpg';
+import colesium3 from '../public/images/Gallery Photos/2026/IMG_5123.jpg';
 
 export default function Coliseum() {
   return (
@@ -49,6 +52,36 @@ export default function Coliseum() {
                     <span>Collaborative workspace for team members</span>
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Photos Section */}
+        <section className="py-24">
+          <div className="max-w-5xl mx-auto px-4">
+            <h3 className="text-3xl font-bold mb-4 text-center">Photos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <img
+                  src={colesium1}
+                  alt="Coliseum Photo 1"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <img
+                  src={colesium2}
+                  alt="Coliseum Photo 2"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <img
+                  src={colesium3}
+                  alt="Coliseum Photo 3"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
