@@ -18,7 +18,7 @@ export function Footer() {
           <Link to="/sponsorship" className="hover:text-white transition-colors">Sponsorship</Link>
           <Link to="/safety" className="hover:text-white transition-colors">Safety</Link>
           <Link to="/resources" className="hover:text-white transition-colors">Resources</Link>
-          <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          {/* <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link> */}
         </div>
         <div className="mt-12 pt-8 border-t border-zinc-900 text-zinc-600 text-[13px] uppercase tracking-widest">
           ⓒ 2026 Northern Force Team 172. All systems operational.
