@@ -5,7 +5,7 @@ export function Privacy() {
   return (
     <>
     <head>
-      <title>Northern Force | Privacy Policy</title>
+      <title>Team 172 | Privacy Policy</title>
     </head>
     <div className="bg-black">
         <div className="min-h-screen">

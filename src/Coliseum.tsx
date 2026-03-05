@@ -9,7 +9,7 @@ export default function Coliseum() {
   return (
     <>
     <head>
-      <title>Northern Force | The Coliseum</title>
+      <title>Team 172 | The Coliseum</title>
     </head>
     <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
         <Navigation />

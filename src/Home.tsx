@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
     <head>
-      <title>Northern Force Robotics</title>
+      <title>Team 172 | Northern Force</title>
     </head>
     <div className="bg-black">
         <div className="min-h-screen">

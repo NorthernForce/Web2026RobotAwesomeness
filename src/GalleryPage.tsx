@@ -108,7 +108,7 @@ export function GalleryPage() {
   return (
     <>
     <head>
-      <title>Northern Force | Photo Gallery</title>
+      <title>Team 172 | Photo Gallery</title>
     </head>
       <Navigation />
 

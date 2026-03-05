@@ -8,7 +8,7 @@ export default function Design() {
   return (
     <>
     <head>
-      <title>Northern Force | Design</title>
+      <title>Team 172 | Design</title>
     </head>
     <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
         <Navigation />

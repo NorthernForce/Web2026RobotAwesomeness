@@ -9,7 +9,7 @@ export function MemorialPage() {
   return (
     <>
     <head>
-      <title>Northern Force | Memorial</title>
+      <title>Team 172 | Memorial</title>
     </head>
       <Navigation />
       <div className="min-h-screen bg-black text-white pt-32 pb-16">
