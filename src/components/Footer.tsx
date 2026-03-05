@@ -12,6 +12,10 @@ export function Footer() {
         </p>
         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8">#66 Maine Mall, South Portland, ME
         </p>
+         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="mailto:Meredith.Greenlaw@northernforcerobotics.org">Meredith.Greenlaw@northernforcerobotics.org</a>
+        </p>
+         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="mailto:Luke.h@northernforcerobotics.org">Luke.h@northernforcerobotics.org</a>
+        </p>
         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="tel:2076327108">(207) 632-7108</a>
         </p>
         <div className="flex justify-center gap-8 text-zinc-400 text-xs uppercase font-bold tracking-widest">
