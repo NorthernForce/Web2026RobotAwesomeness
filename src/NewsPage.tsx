@@ -12,7 +12,10 @@ export function NewsPage() {
       date: new Date(2040, 1, 4), 
       title: 'why r u here',
       time: '6:00 PM - 8:00 PM',
-      location: 'Example Location',
+      location: {
+        name: 'Example Location',
+        link: '#'
+      },
       description: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah', 
     },
 
@@ -23,7 +26,10 @@ export function NewsPage() {
       title: 'Week 1 - Pine Tree',
       color: 'bg-purple-600',
       time: 'All Day',
-      location: 'Falmouth, ME',
+      location: {
+        name: 'Falmouth, ME',
+        link: 'https://maps.app.goo.gl/QxubYy7kgWZ6CQEd8'
+      },
       description: 'FIRST Robotics Week 1 Competition - our team will compete against 20+ alliences from across the region. Good luck Northern Force!',
       moreInfoLink: 'https://www.thebluealliance.com/event/2026mefal#teams',
     },
@@ -35,7 +41,10 @@ export function NewsPage() {
       title: 'Week 4 - UNH',
       color: 'bg-purple-600',
       time: 'All Day',
-      location: 'Durham, NH',
+      location: {
+        name: 'Durham, NH',
+        link: 'https://maps.app.goo.gl/wrYe4vHwp3ycg8Z57'
+      },
       description: 'FIRST Robotics Week 4 Competition - our team will compete against 35+ alliences from across the region. Good luck Northern Force!',
       moreInfoLink: 'https://www.thebluealliance.com/event/2026nhdur'
     },
@@ -47,7 +56,10 @@ export function NewsPage() {
       title: 'World Championship - Houston, TX',
       color: 'bg-purple-600',
       time: 'All Day',
-      location: 'Houston, TX',
+      location: {
+        name: 'Houston, TX',
+        link: '#'
+      },
       description: 'If our team qualifies, we will compete in the FIRST Robotics World Championship against the top alliences. This will take a lot of effort, and donations would be appreciated \(no current donation tab\)! Good luck Northern Force!',
     },
   ];
