@@ -85,69 +85,73 @@ export function NewsPage() {
   };
 
   return (
+    <>
+    <head>
+      <title>Northern Force | News & Events</title>
+    </head>
     <div className="bg-black min-h-screen">
-      <Navigation />
-      <div className="max-w-[1800px] mx-auto px-4 py-8">
-        <h1 className="text-5xl font-bold text-white mb-8 text-center">
-          Team News & Events
-        </h1>
+        <Navigation />
+        <div className="max-w-[1800px] mx-auto px-4 py-8">
+          <h1 className="text-5xl font-bold text-white mb-8 text-center">
+            Team News & Events
+          </h1>
 
-        {/* Full Page Calendar Section */}
-        <div className="mb-8">
-          <div className="bg-gray-900 border-4 rounded-xl p-8 lg:p-16 shadow-2xl" style={{ borderColor: '#db3e79', boxShadow: '0 25px 50px -12px rgba(219, 62, 121, 0.2)' }}>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <Calendar className="w-12 h-12" style={{ color: '#db3e79' }} />
-              <h2 className="text-4xl font-bold text-white">Event Calendar</h2>
+          {/* Full Page Calendar Section */}
+          <div className="mb-8">
+            <div className="bg-gray-900 border-4 rounded-xl p-8 lg:p-16 shadow-2xl" style={{ borderColor: '#db3e79', boxShadow: '0 25px 50px -12px rgba(219, 62, 121, 0.2)' }}>
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <Calendar className="w-12 h-12" style={{ color: '#db3e79' }} />
+                <h2 className="text-4xl font-bold text-white">Event Calendar</h2>
+              </div>
+
+              <EventCalendar events={events} />
             </div>
-            
-            <EventCalendar events={events} />
+          </div>
+
+          {/* Upcoming Events and News in Two Columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Upcoming Events */}
+            <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
+              <div className="flex items-center gap-2 mb-6">
+                <Clock className="w-7 h-7" style={{ color: '#db3e79' }} />
+                <h3 className="text-2xl font-bold text-white">Upcoming Events</h3>
+              </div>
+              <ul className="space-y-4">
+                {upcomingEvents.map((event, index) => (
+                  <li key={index} className="border-l-4 border-pink-500 pl-4 py-2">
+                    <div className="text-pink-500 font-bold text-lg">{formatEventDate(event)}</div>
+                    <div className="text-white text-lg">{event.title}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Latest News */}
+            <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
+              <h3 className="text-2xl font-bold text-white mb-6">Latest News</h3>
+              <div className="space-y-4">
+                {newsItems.map((item, index) => (
+                  <article
+                    key={index}
+                    className="border-l-4 border-pink-500 pl-4 py-2"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-gray-400 text-sm">{item.date}</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-white mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {item.content}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Upcoming Events and News in Two Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Upcoming Events */}
-          <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
-            <div className="flex items-center gap-2 mb-6">
-              <Clock className="w-7 h-7" style={{ color: '#db3e79' }} />
-              <h3 className="text-2xl font-bold text-white">Upcoming Events</h3>
-            </div>
-            <ul className="space-y-4">
-              {upcomingEvents.map((event, index) => (
-                <li key={index} className="border-l-4 border-pink-500 pl-4 py-2">
-                  <div className="text-pink-500 font-bold text-lg">{formatEventDate(event)}</div>
-                  <div className="text-white text-lg">{event.title}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Latest News */}
-          <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
-            <h3 className="text-2xl font-bold text-white mb-6">Latest News</h3>
-            <div className="space-y-4">
-              {newsItems.map((item, index) => (
-                <article
-                  key={index}
-                  className="border-l-4 border-pink-500 pl-4 py-2"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-gray-400 text-sm">{item.date}</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {item.content}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <LinksSection />
-      <Footer />
-    </div>
+        <LinksSection />
+        <Footer />
+      </div></>
   );
 }

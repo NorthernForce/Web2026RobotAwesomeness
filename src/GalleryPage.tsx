@@ -107,6 +107,9 @@ export function GalleryPage() {
 
   return (
     <>
+    <head>
+      <title>Northern Force | Photo Gallery</title>
+    </head>
       <Navigation />
 
       {/* Side Navigation Buttons */}

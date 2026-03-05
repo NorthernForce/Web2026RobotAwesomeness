@@ -5,6 +5,9 @@ import { LinksSection } from './components/LinksSection';
 export function HahaUFoundMePage() {
   return (
     <>
+    <head>
+      <title>Northern Force | hehe</title>
+    </head>
       <Navigation />
       <div className="flex items-center justify-center bg-black px-4 py-16">
         <div className="max-w-2xl text-center">
