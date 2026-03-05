@@ -6,10 +6,10 @@ interface CalendarEvent {
   startDate?: Date;
   endDate?: Date;
   title: string;
+  time: string;
+  location: { name: string; link: string } | string;
+  description: string;
   color?: string;
-  description?: string;
-  time?: string;
-  location?: string;
   moreInfoLink?: string;
 }
 
@@ -235,7 +235,13 @@ export function EventCalendar({ events }: EventCalendarProps) {
               {selectedEvent.location && (
                 <div className="flex items-start gap-2">
                   <span className="text-pink-500 font-bold">Location:</span>
-                  <span className="text-white">{selectedEvent.location}</span>
+                  {typeof selectedEvent.location === 'string' ? (
+                    <span className="text-white">{selectedEvent.location}</span>
+                  ) : (
+                    <a href={selectedEvent.location.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">
+                      {selectedEvent.location.name}
+                    </a>
+                  )}
                 </div>
               )}
               {selectedEvent.description && (

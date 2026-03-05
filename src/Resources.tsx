@@ -8,9 +8,9 @@ export function Resources() {
       category: 'Learning Materials',
       icon: BookOpen,
       items: [
-        { title: 'Robot Design Principles', description: 'Introduction to mechanical and electrical design', url: '#' },
-        { title: 'Programming Guide', description: 'Software development resources for FRC', url: '#' },
-        { title: 'Pneumatics Reference', description: 'Air system design and implementation', url: '#' },
+        { title: 'WPILib Documentation', description: 'Official documentation for WPILib', url: 'https://docs.wpilib.org/en/stable/' },
+        { title: 'Java Fundamentals', description: 'Learn the basics of Java programming', url: 'https://www.w3schools.com/java/' },
+        { title: 'CAD Basics', description: 'Introduction to computer-aided design', url: 'https://learn.onshape.com/' },
       ],
     },
     {
@@ -29,6 +29,8 @@ export function Resources() {
         { title: 'FIRST Robotics Official', description: 'Official FIRST Robotics Competition site', url: 'https://www.firstinspires.org' },
         { title: 'The Blue Alliance', description: 'Event results and team data', url: 'https://www.thebluealliance.com/team/172' },
         { title: 'Chief Delphi Forums', description: 'Community discussion and collaboration', url: 'https://www.chiefdelphi.com' },
+        { title: 'Northern Force GitHub', description: 'Source code and project repositories', url: 'https://github.com/NorthernForce' },
+        { title: 'STEM Coliseum', description: 'Team management and collaboration platform', url: 'https://stem-coliseum.odoo.com' },
       ],
     },
   ];
