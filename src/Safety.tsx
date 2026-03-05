@@ -10,6 +10,10 @@ export function Safety() {
   }, []);
 
   return (
+    <>
+    <head>
+      <title>Northern Force | Safety</title>
+    </head>
     <div className="bg-black">
       <div className="min-h-screen">
         <Navigation />
@@ -40,16 +44,14 @@ export function Safety() {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
-            </section>
+              </section>
 
             <p className="text-center text-gray-400">
               If you are not redirected automatically, please click the button above.
             </p>
           </div>
         </div>
-      </div>
-      <Footer />
-    </div>
+        <Footer />
+      </div></>
   );
 }
