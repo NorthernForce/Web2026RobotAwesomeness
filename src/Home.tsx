@@ -6,14 +6,18 @@ import { Footer } from './components/Footer';
 
 export default function Home() {
   return (
+    <>
+    <head>
+      <title>Northern Force Robotics</title>
+    </head>
     <div className="bg-black">
-      <div className="min-h-screen">
-        <Navigation />
-        <HeroBanner /> 
-        <VideoPlayer />
-        <LinksSection />
-      </div>
-      <Footer />
-    </div>
+        <div className="min-h-screen">
+          <Navigation />
+          <HeroBanner />
+          <VideoPlayer />
+          <LinksSection />
+        </div>
+        <Footer />
+      </div></>
   );
 }

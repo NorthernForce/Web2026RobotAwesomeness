@@ -8,6 +8,9 @@ import { Footer } from './components/Footer';
 export function MemorialPage() {
   return (
     <>
+    <head>
+      <title>Northern Force | Memorial</title>
+    </head>
       <Navigation />
       <div className="min-h-screen bg-black text-white pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4">

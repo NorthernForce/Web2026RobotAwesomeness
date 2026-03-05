@@ -6,6 +6,9 @@ import { Footer } from './components/Footer';
 export function ComingSoonPage() {
   return (
     <>
+    <head>
+      <title>Coming Soon!</title>
+    </head>
       <Navigation />
       <div className="flex items-center justify-center bg-black px-4 py-16">
         <div className="max-w-2xl text-center">
