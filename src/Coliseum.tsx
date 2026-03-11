@@ -73,13 +73,13 @@ export default function Coliseum() {
                 <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg hover:border-[#db3e79] transition-colors">
                   <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79]">Computer Lab</h3>
                   <p className="text-zinc-300 leading-relaxed">
-                    Computers, software, and development tools for programming, CAD, and fooling around.
+                    Computers, software, and development tools for programming, CAD, and having fun while exploring STEM.
                   </p>
                 </div>
                 <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg hover:border-[#db3e79] transition-colors">
                   <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79]">Testing Arena</h3>
                   <p className="text-zinc-300 leading-relaxed">
-                    Full-sized(ish) arena replica for testing robot performance and validating design concepts before competition.
+                    Close to full sized arena replica for testing robot performance and validating design concepts before competition.
                   </p>
                 </div>
               </div>
