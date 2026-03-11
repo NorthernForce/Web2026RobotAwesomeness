@@ -44,7 +44,8 @@ export function Safety() {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
-              </section>
+              </div>
+            </section>
 
             <p className="text-center text-gray-400">
               If you are not redirected automatically, please click the button above.
@@ -52,6 +53,8 @@ export function Safety() {
           </div>
         </div>
         <Footer />
-      </div></>
+      </div>
+    </div>
+    </>
   );
 }
