@@ -12,7 +12,7 @@ export function Safety() {
   return (
     <>
     <head>
-      <title>Northern Force | Safety</title>
+      <title>Team 172 | Safety</title>
     </head>
     <div className="bg-black">
       <div className="min-h-screen">

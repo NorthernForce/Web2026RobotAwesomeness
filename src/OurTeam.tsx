@@ -38,7 +38,7 @@ export function OurTeam() {
 
   return (
     <><head>
-      <title>Northern Force | Our Team</title>
+      <title>Team 172 | Our Team</title>
     </head><div className="bg-black">
         <div className="min-h-screen">
           <Navigation />
@@ -98,7 +98,7 @@ export function OurTeam() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-2">Outreach & Community</h3>
-                    <p>We're passionate about inspiring the next generation of engineers through demonstrations, mentoring, and community engagement.</p>
+                    <p>We're passionate about inspiring the next generation of engineers through demonstrations, mentoring, and community engagement. We support local FIRST LEGO League (FLL) teams and conduct robotics demonstrations at schools throughout our region to spark interest in STEM.</p>
                   </div>
                 </div>
               </section>

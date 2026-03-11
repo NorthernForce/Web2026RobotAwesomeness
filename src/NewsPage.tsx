@@ -99,7 +99,7 @@ export function NewsPage() {
   return (
     <>
     <head>
-      <title>Northern Force | News & Events</title>
+      <title>Team 172 | News & Events</title>
     </head>
     <div className="bg-black min-h-screen">
         <Navigation />

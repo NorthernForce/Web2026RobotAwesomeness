@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <>
     <head>
-      <title>Northern Force | Contact Us</title>
+      <title>Team 172 | Contact Us</title>
     </head>
     <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
         <Navigation />

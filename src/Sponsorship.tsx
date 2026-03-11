@@ -35,7 +35,7 @@ export function Sponsorship() {
 
   return (
     <><head>
-      <title>Northern Force | Sponsorship</title>
+      <title>Team 172 | Sponsorship</title>
     </head><div className="bg-black">
         <div className="min-h-screen">
           <Navigation />

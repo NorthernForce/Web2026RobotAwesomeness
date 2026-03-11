@@ -37,7 +37,7 @@ export function Resources() {
 
   return (
     <><head>
-      <title>Northern Force | Resources</title>
+      <title>Team 172 | Resources</title>
     </head><div className="bg-black">
         <div className="min-h-screen">
           <Navigation />
