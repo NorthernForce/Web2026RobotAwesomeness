@@ -1,36 +1,46 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Award, Zap, Users } from 'lucide-react';
+import { ImageWithFallback } from './components/ImagewithFallback';
+
+// local sponsor assets (some logos live in src/assets/Sponsorships, some in public/images)
+import brookfieldLogo from './assets/Sponsorships/brookfield-properties-logo-png_seeklogo-339528.png'
+import adobeLogo from './assets/Sponsorships/adobe-color.svg'
+import stemColiseumLogo from './assets/Sponsorships/STEM Coliseum.webp'
+import falmouthSchoolLogo from './assets/Sponsorships/Logo_FalmouthSChoolDistrict_Maine_September2021.webp'
+import tftLogo from './assets/Sponsorships/tftlogo.svg'
+import gofarLogo from './assets/Sponsorships/11672.webp'
+
+import aecLogo from './assets/Sponsorships/logo-aec.png'
+import lancoLogo from './assets/Sponsorships/lanco-integrated-logo-white.svg'
+import falmouthLionsLogo from './assets/Sponsorships/falmouth-lions-46th-annual-auction-48(1).jpeg'
+// greenlaw image is in public/images
+import greenlaw from '/images/533321greenlaw.webp'
 
 export function Sponsorship() {
-  const sponsorshipTiers = [
-    {
-      name: 'Platinum',
-      color: 'text-gray-300',
-      benefits: [
-        'Logo on all team materials',
-        'Recognition at competitions',
-        'Team merchandise',
-        'Event invitations',
-      ],
-    },
-    {
-      name: 'Gold',
-      color: 'text-yellow-500',
-      benefits: [
-        'Logo on website',
-        'Recognition at events',
-        'Team updates',
-      ],
-    },
-    {
-      name: 'Silver',
-      color: 'text-blue-300',
-      benefits: [
-        'Logo recognition',
-        'Team appreciation',
-      ],
-    },
+  // Featured (larger) sponsors — show prominent logo spaces
+  const featuredSponsors = [
+    { name: 'Brookfield Properties', logo: brookfieldLogo },
+    { name: 'GoFAR', logo: gofarLogo },
+    { name: 'Adobe', logo: adobeLogo },
+    { name: 'Haller Patel Family', logo: undefined },
+    { name: 'Falmouth High School', logo: falmouthSchoolLogo },
+    { name: 'STEM Coliseum', logo: stemColiseumLogo },
+    { name: 'Town Fair Tire', logo: tftLogo },
+  ];
+
+  // Supporting (smaller) sponsors — compact logos or name-only boxes
+  const supportingSponsors = [
+    { name: 'Gorham High School', logo: undefined },
+    { name: 'AEC Engineering', logo: aecLogo },
+    { name: 'Falmouth Lions Club', logo: falmouthLionsLogo },
+    { name: 'Lockman Family', logo: undefined },
+    { name: 'Boudreau Family', logo: undefined },
+    { name: 'Bourgoin Family', logo: undefined },
+    { name: 'Lanco Integrated', logo: lancoLogo },
+    { name: 'Linda Dennig', logo: undefined },
+    { name: 'Hankins Family', logo: undefined },
+    { name: 'Greenlaw Family', logo: greenlaw },
   ];
 
   return (
@@ -72,24 +82,39 @@ export function Sponsorship() {
                 </div>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-white mb-6">Sponsorship Tiers</h2>
-                <div className="space-y-4">
-                  {sponsorshipTiers.map((tier) => (
-                    <div key={tier.name} className="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-[#db3e79] transition-colors">
-                      <h3 className={`text-xl font-bold mb-3 ${tier.color}`}>{tier.name}</h3>
-                      <ul className="space-y-2 text-gray-300">
-                        {tier.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-center">
-                            <span className="text-[#db3e79] mr-3">✓</span>
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-6">Featured Sponsors</h2>
+              <p className="text-gray-300 mb-6">Our primary sponsors who make a big impact — their logos are featured prominently below.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {featuredSponsors.map((s) => (
+                  <div key={s.name} className="bg-gray-900 border border-gray-800 p-6 rounded-lg flex flex-col items-center justify-center hover:border-[#db3e79] transition-colors">
+                    <div className="w-full h-28 sm:h-32 md:h-36 mb-4 flex items-center justify-center px-6">
+                      {/* make logos fill height while preserving aspect ratio */}
+                      <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
                     </div>
-                  ))}
-                </div>
-              </section>
+                    <h3 className="text-lg font-bold text-white text-center">{s.name}</h3>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-6">Supporting Sponsors</h2>
+              <p className="text-gray-300 mb-6">We thank these organizations and families for their generous support.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {supportingSponsors.map((s) => (
+                  <div key={s.name} className="bg-gray-900 border border-gray-800 p-3 rounded flex flex-col items-center justify-center text-center hover:border-[#db3e79] transition-colors">
+                    <div className="w-full h-24 sm:h-28 md:h-28 flex items-center justify-center px-3">
+                      <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
+                    </div>
+                    {/* show name for clarity and accessibility */}
+                    <div className="mt-2">
+                      <span className="text-xs text-gray-300">{s.name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
               <section className="bg-gray-900 border-2 border-[#db3e79] p-8 rounded-lg text-center">
                 <h2 className="text-2xl font-bold text-white mb-3">Interested in Sponsoring?</h2>
