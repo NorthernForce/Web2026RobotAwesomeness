@@ -12,13 +12,17 @@ export function Footer() {
         </p>
         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8">#66 Maine Mall, South Portland, ME
         </p>
+         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="mailto:Meredith.Greenlaw@northernforcerobotics.org">Meredith.Greenlaw@northernforcerobotics.org</a>
+        </p>
+         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="mailto:Luke.h@northernforcerobotics.org">Luke.h@northernforcerobotics.org</a>
+        </p>
         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8"><a href="tel:2076327108">(207) 632-7108</a>
         </p>
         <div className="flex justify-center gap-8 text-zinc-400 text-xs uppercase font-bold tracking-widest">
           <Link to="/sponsorship" className="hover:text-white transition-colors">Sponsorship</Link>
           <Link to="/safety" className="hover:text-white transition-colors">Safety</Link>
           <Link to="/resources" className="hover:text-white transition-colors">Resources</Link>
-          <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          {/* <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link> */}
         </div>
         <div className="mt-12 pt-8 border-t border-zinc-900 text-zinc-600 text-[13px] uppercase tracking-widest">
           ⓒ 2026 Northern Force Team 172. All systems operational.

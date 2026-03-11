@@ -1,6 +1,6 @@
 import { ImageWithFallback } from './components/ImagewithFallback';
 import { Heart } from 'lucide-react';
-import clareGreenlaw from "/images/533321greenlaw.webp";
+import clareGreenlaw from "/images/clare greenlaw.png";
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 import { Footer } from './components/Footer';
@@ -9,7 +9,7 @@ export function MemorialPage() {
   return (
     <>
     <head>
-      <title>Northern Force | Memorial</title>
+      <title>Team 172 | Memorial</title>
     </head>
       <Navigation />
       <div className="min-h-screen bg-black text-white pt-32 pb-16">
@@ -49,35 +49,35 @@ export function MemorialPage() {
               <p>
                 Clare Greenlaw was an extraordinary member of Northern Force - Team 172,
                 whose passion for robotics, dedication to the team, and kind spirit left
-                an indelible mark on everyone who had the privilege of knowing her.
+                an indelible mark on everyone who had the privilege of knowing him.
               </p>
 
               <p>
-                Her enthusiasm was contagious, her work ethic was unmatched, and her
-                ability to bring the team together made her an irreplaceable part of our
-                robotics family. Whether she was problem-solving a complex mechanism,
+                His enthusiasm was contagious, his work ethic was unmatched, and his
+                ability to bring the team together made him an irreplaceable part of our
+                robotics family. Whether he was problem-solving a complex mechanism,
                 mentoring new members, or simply bringing a smile to everyone's face,
                 Clare embodied the true spirit of FIRST Robotics.
               </p>
 
               <p>
-                Beyond her technical skills and achievements, Clare's legacy lives on
-                in the values she championed: collaboration, perseverance, innovation,
-                and above all, kindness. She taught us that robotics is not just about
+                Beyond his technical skills and achievements, Clare's legacy lives on
+                in the values he championed: collaboration, perseverance, innovation,
+                and above all, kindness. He taught us that robotics is not just about
                 building machines—it's about building community, friendships, and memories
                 that last a lifetime.
               </p>
 
               <p className="text-pink-400 font-bold text-xl text-center italic mt-8">
                 "Clare's light continues to guide us forward. We build, we innovate,
-                and we compete in her honor."
+                and we compete in his honor."
               </p>
             </div>
 
             {/* Impact Section */}
             <div className="mt-12 pt-8 border-t-2 border-pink-500">
               <h3 className="text-3xl font-bold text-center mb-6 text-white">
-                Her Impact on Team 172
+                His Impact on Team 172
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
@@ -90,7 +90,7 @@ export function MemorialPage() {
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
                   <h4 className="text-xl font-bold text-pink-500 mb-3">Innovation</h4>
                   <p className="text-gray-300">
-                    Her creative problem-solving and technical expertise helped
+                    His creative problem-solving and technical expertise helped
                     drive many of our most successful robot designs.
                   </p>
                 </div>

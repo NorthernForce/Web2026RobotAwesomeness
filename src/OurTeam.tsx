@@ -38,7 +38,7 @@ export function OurTeam() {
 
   return (
     <><head>
-      <title>Northern Force | Our Team</title>
+      <title>Team 172 | Our Team</title>
     </head><div className="bg-black">
         <div className="min-h-screen">
           <Navigation />

@@ -30,7 +30,7 @@ export function Donate() {
   return (
     <>
     <head>
-      <title>Northern Force | Donate</title>
+      <title>Team 172| Donate</title>
     </head>
     <div className="bg-black">
         <div className="min-h-screen">

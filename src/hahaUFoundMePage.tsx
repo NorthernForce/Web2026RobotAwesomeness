@@ -6,7 +6,7 @@ export function HahaUFoundMePage() {
   return (
     <>
     <head>
-      <title>Northern Force | hehe</title>
+      <title>Team 172| hehe</title>
     </head>
       <Navigation />
       <div className="flex items-center justify-center bg-black px-4 py-16">
