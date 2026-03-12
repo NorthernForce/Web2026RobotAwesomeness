@@ -14,6 +14,7 @@ import { Sponsorship } from './Sponsorship';
 import { Safety } from './Safety';
 import { Resources } from './Resources';
 import { OurTeam } from './OurTeam';
+import { Mentors } from './Mentors';
 import { Donate } from './Donate';
 
 function ScrollToTop() {
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/safety" element={<Safety />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/team" element={<OurTeam />} />
+        <Route path="/mentors" element={<Mentors />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/easterEgg" element={<HahaUFoundMePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
