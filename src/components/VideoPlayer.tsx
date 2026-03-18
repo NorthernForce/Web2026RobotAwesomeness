@@ -8,7 +8,7 @@ export function VideoPlayer() {
         <div className="relative aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border-4 border-[#db3e79]">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/_fybREErgyM?autoplay=1&mute=1"
+            src="https://www.youtube.com/embed/_fybREErgyM?autoplay=1&mute=1&loop=1&playlist=_fybREErgyM&rel=0"
             title="Northern Force Robotics Team Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
