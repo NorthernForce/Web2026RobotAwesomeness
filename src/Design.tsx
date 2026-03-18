@@ -1,58 +1,73 @@
 import { Navigation } from './components/Navigation';
 import { RobotHero } from './components/RobotHero';
-import { RobotFeatures } from './components/RobotFeatures';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+import { ImageWithFallback } from './components/ImagewithFallback';
+
+const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) => {
+  const year = 1996 + idx;
+  return {
+    year,
+    name: year === 2025 ? 'Valkyrie MK‑IV' : `Robot ${year}`,
+    description: `Our ${year} competition robot, engineered to tackle that year's FIRST challenge.`,
+    image: `/images/robots/${year}.jpg`,
+  };
+}).reverse();
+
+function RobotCard({ year, name, description, image }: { year: number; name: string; description: string; image: string }) {
+  return (
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-sm hover:shadow-lg transition-shadow">
+      <div className="relative h-56 w-full">
+        <ImageWithFallback
+          src={image}
+          alt={`${year} robot`}
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <p className="text-xs uppercase tracking-wide text-zinc-400">{year}</p>
+          <h3 className="text-xl font-black text-white leading-tight">{name}</h3>
+        </div>
+      </div>
+      <div className="p-5">
+        <p className="text-sm leading-relaxed text-zinc-300">{description}</p>
+      </div>
+    </article>
+  );
+}
 
 export default function Design() {
   return (
     <>
-    <head>
-      <title>Team 172 | Design</title>
-    </head>
-    <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
+      <head>
+        <title>Team 172 | Robots</title>
+      </head>
+      <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
         <Navigation />
         <main>
           <RobotHero />
-          <RobotFeatures />
-          <section className="py-24 bg-[#db3e79]">
-            <div className="max-w-7xl mx-auto px-4 text-black">
-              <div className="grid md:grid-cols-4 gap-12">
-                <div className="text-center">
-                  <p className="text-5xl font-black mb-2">24/7</p>
-                  <p className="text-xs uppercase font-bold tracking-[0.2em] opacity-80">Fabrication Support</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-5xl font-black mb-2">12</p>
-                  <p className="text-xs uppercase font-bold tracking-[0.2em] opacity-80">Custom Motors</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-5xl font-black mb-2">168</p>
-                  <p className="text-xs uppercase font-bold tracking-[0.2em] opacity-80">Sensors Polled</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-5xl font-black mb-2">100%</p>
-                  <p className="text-xs uppercase font-bold tracking-[0.2em] opacity-80">Team Collaboration</p>
-                </div>
-              </div>
-            </div>
-          </section>
 
-          {/* Call to action */}
-          <section className="py-24 bg-black border-y border-zinc-900">
-            <div className="max-w-4xl mx-auto px-4 text-center">
-              <h2 className="text-4xl font-black text-white uppercase tracking-tighter mb-8">Want to see the Valkyrie in action?</h2>
-              <button className="px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)]">
-                Watch Competition Stream
-              </button>
+          <section className="py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="mb-12 text-center">
+                <h2 className="text-4xl font-black uppercase tracking-tight">Robots Through the Years</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-zinc-400">
+                  From today back to 1996, every robot tells a story. Click into each year to explore the design goals, lessons learned, and what made that season memorable.
+                </p>
+              </div>
+
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {robots.map((robot) => (
+                  <RobotCard key={robot.year} {...robot} />
+                ))}
+              </div>
             </div>
           </section>
         </main>
 
         <LinksSection />
         <Footer />
-
-
-      </div></>
+      </div>
+    </>
   );
 }
