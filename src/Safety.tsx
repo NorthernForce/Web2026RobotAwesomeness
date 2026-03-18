@@ -11,19 +11,19 @@ export function Safety() {
 
   return (
     <>
-      <head>
-        <title>Team 172 | Safety</title>
-      </head>
-      <div className="bg-black">
-        <div className="min-h-screen">
-          <Navigation />
-          <div className="max-w-4xl mx-auto px-4 py-16 text-white">
-            <div className="mb-12">
-              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
-                Safety <span className="text-[#db3e79]">Reporting</span>
-              </h1>
-              <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
-            </div>
+    <head>
+      <title>Team 172 | Safety</title>
+    </head>
+    <div className="bg-black">
+      <div className="min-h-screen">
+        <Navigation />
+        <div className="max-w-4xl mx-auto px-4 py-16 text-white">
+          <div className="mb-12">
+            <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
+              Safety <span className="text-[#db3e79]">Reporting</span>
+            </h1>
+            <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
+          </div>
 
             <div className="space-y-12 text-gray-300">
               <section className="bg-blue-900 border-2 border-blue-700 p-6 rounded-lg">
@@ -45,7 +45,8 @@ export function Safety() {
                     </a>
                   </div>
                 </div>
-              </section>
+              </div>
+            </section>
 
               <p className="text-center text-gray-400">
                 If you are not redirected automatically, please click the button above.
@@ -54,7 +55,9 @@ export function Safety() {
           </div>
           <Footer />
         </div>
+        <Footer />
       </div>
+    </div>
     </>
   );
 }

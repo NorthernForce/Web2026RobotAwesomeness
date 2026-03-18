@@ -1,11 +1,16 @@
 import {
   Facebook,
   Instagram,
+  ChevronDown,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import blueAllianceLogo from "/images/BlueAllianceReg.png";
 
 export function Navigation() {
+  const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState(false);
+  const [isDonateDropdownOpen, setIsDonateDropdownOpen] = useState(false);
+
   const leftButtons = [
     "Our Team",
     "Contact",
@@ -15,7 +20,7 @@ export function Navigation() {
 
   const rightButtons = [
     "News",
-    "Coliseum", 
+    "Coliseum",
     "Memorial",
     //Socials
   ];
@@ -27,11 +32,79 @@ export function Navigation() {
           {/* Left buttons */}
           <div className="flex items-center gap-2">
             {leftButtons.map((button) => {
+              if (button === 'Our Team') {
+                return (
+                  <div key={button} className="relative group">
+                    <button
+                      className="px-4 py-2 text-white hover:text-[#db3e79] transition-colors text-[1.05rem] flex items-center gap-1"
+                      onMouseEnter={() => setIsTeamDropdownOpen(true)}
+                      onMouseLeave={() => setIsTeamDropdownOpen(false)}
+                    >
+                      {button}
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                    {isTeamDropdownOpen && (
+                      <div
+                        className="absolute left-0 mt-0 w-40 bg-gray-900 border border-gray-800 rounded-lg shadow-lg z-50"
+                        onMouseEnter={() => setIsTeamDropdownOpen(true)}
+                        onMouseLeave={() => setIsTeamDropdownOpen(false)}
+                      >
+                        <Link
+                          to="/team"
+                          className="block px-4 py-3 text-white hover:text-[#db3e79] hover:bg-gray-800 transition-colors rounded-t-lg"
+                        >
+                          Our Team
+                        </Link>
+                        <Link
+                          to="/mentors"
+                          className="block px-4 py-3 text-white hover:text-[#db3e79] hover:bg-gray-800 transition-colors rounded-b-lg border-t border-gray-700"
+                        >
+                          Mentors
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              if (button === 'Donate') {
+                return (
+                  <div key={button} className="relative group">
+                    <button
+                      className="px-4 py-2 text-white hover:text-[#db3e79] transition-colors text-[1.05rem] flex items-center gap-1"
+                      onMouseEnter={() => setIsDonateDropdownOpen(true)}
+                      onMouseLeave={() => setIsDonateDropdownOpen(false)}
+                    >
+                      {button}
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                    {isDonateDropdownOpen && (
+                      <div
+                        className="absolute left-0 mt-0 w-40 bg-gray-900 border border-gray-800 rounded-lg shadow-lg z-50"
+                        onMouseEnter={() => setIsDonateDropdownOpen(true)}
+                        onMouseLeave={() => setIsDonateDropdownOpen(false)}
+                      >
+                        <Link
+                          to="/donate"
+                          className="block px-4 py-3 text-white hover:text-[#db3e79] hover:bg-gray-800 transition-colors rounded-t-lg"
+                        >
+                          Donate
+                        </Link>
+                        <Link
+                          to="/sponsorship"
+                          className="block px-4 py-3 text-white hover:text-[#db3e79] hover:bg-gray-800 transition-colors rounded-b-lg border-t border-gray-700"
+                        >
+                          Sponsorship
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              
               let path = "/comingsoonpage";
               if (button === 'Design') path = "/design";
               if (button === 'Contact') path = "/contact";
-              if (button === 'Our Team') path = "/team";
-              if (button === 'Donate') path = "/donate";
               
               return (
                 <Link
