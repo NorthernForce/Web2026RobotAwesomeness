@@ -82,7 +82,7 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-bold uppercase mb-2">Name</label>
+                  <label className="block text-sm font-bold uppercase mb-2 rounded-2xl">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -90,10 +90,10 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     disabled={status === 'loading'}
-                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50" />
+                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50 rounded-2xl" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold uppercase mb-2">Email</label>
+                  <label className="block text-sm font-bold uppercase mb-2 rounded-2xl">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -101,10 +101,10 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     disabled={status === 'loading'}
-                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50" />
+                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50 rounded-2xl" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold uppercase mb-2">Message</label>
+                  <label className="block text-sm font-bold uppercase mb-2 rounded-2xl">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -112,13 +112,13 @@ export default function Contact() {
                     required
                     disabled={status === 'loading'}
                     rows={6}
-                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50"
+                    className="w-full bg-black border border-zinc-700 px-4 py-3 text-white focus:border-[#db3e79] focus:outline-none disabled:opacity-50 rounded-2xl"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)] disabled:opacity-50 disabled:cursor-not-allowed rounded-2xl"
                 >
                   {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
