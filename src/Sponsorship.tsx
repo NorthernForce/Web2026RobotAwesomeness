@@ -21,7 +21,7 @@ export function Sponsorship() {
   // Featured (larger) sponsors — show prominent logo spaces
   const featuredSponsors = [
     { name: 'Brookfield Properties', logo: brookfieldLogo },
-    { name: 'GoFAR', logo: gofarLogo },
+    { name: 'GoFAR', logo: undefined },
     { name: 'Adobe', logo: adobeLogo },
     { name: 'Haller Patel Family', logo: undefined },
     { name: 'Falmouth High School', logo: falmouthSchoolLogo },
@@ -31,7 +31,7 @@ export function Sponsorship() {
 
   // Supporting (smaller) sponsors — compact logos or name-only boxes
   const supportingSponsors = [
-    { name: 'Gorham High School', logo: undefined },
+    { name: 'Gorham High School', logo: gofarLogo },
     { name: 'AEC Engineering', logo: aecLogo },
     { name: 'Falmouth Lions Club', logo: falmouthLionsLogo },
     { name: 'Lockman Family', logo: undefined },
