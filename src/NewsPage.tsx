@@ -53,7 +53,7 @@ export function NewsPage() {
     { 
       startDate: new Date(2026, 4, 27), 
       endDate: new Date(2026, 4, 29), 
-      title: 'World Championship - Houston, TX',
+      title: 'World Championship',
       color: 'bg-purple-600',
       time: 'All Day',
       location: {

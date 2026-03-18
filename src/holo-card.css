@@ -1,0 +1,63 @@
+.holo-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    #db3e79,
+    #7f5af0,
+    #db3e79,
+    #ae00ff,
+    #db3e79
+  );
+  background-size: 400% 400%;
+  animation: holoMove 12s ease infinite;
+  transition: transform 0.3s ease;
+}
+
+.holo-card:hover {
+  transform: scale(1.03) rotate(0.5deg);
+}
+
+.holo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@keyframes holoMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.shine-overlay {
+  background: radial-gradient(
+      circle at var(--shine-x) var(--shine-y),
+      rgba(255, 255, 255, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 40%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  mix-blend-mode: screen;
+  opacity: 1;
+  transition: opacity 0.25s ease-out; /* smooth fade */
+}
+
+.tilt-card.fade-shine .shine-overlay {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+  pointer-events: none;
+}

@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-black border-t border-zinc-800 py-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <div className="inline-block px-8 py-4 border-2 border-[#db3e79] mb-8">
+        <div className="inline-block px-8 py-4 border-2 border-[#db3e79] mb-8 rounded-2xl">
           <h2 className="text-2xl font-black text-white tracking-tighter uppercase">Northern Force <span className="text-[#db3e79]">Team 172</span></h2>
         </div>
         <p className="text-zinc-500 text-sm max-w-xl mx-auto mb-8">
