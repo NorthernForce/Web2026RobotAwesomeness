@@ -10,7 +10,7 @@ const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) 
     year,
     name: year === 2025 ? 'Valkyrie MK‑IV' : `Robot ${year}`,
     description: `Our ${year} competition robot, engineered to tackle that year's FIRST challenge.`,
-    image: `/images/robots/${year}.jpg`,
+    image: `/images/robots/${year}.png`,
   };
 }).reverse();
 
@@ -52,7 +52,7 @@ export default function Design() {
               <div className="mb-12 text-center">
                 <h2 className="text-4xl font-black uppercase tracking-tight">Robots Through the Years</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-zinc-400">
-                  From today back to 1996, every robot tells a story. Click into each year to explore the design goals, lessons learned, and what made that season memorable.
+                  From today back to 1996, every robot tells a story. Read about what each year explored in design goals, lessons learned, and what made that season memorable.
                 </p>
               </div>
 
