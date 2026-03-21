@@ -8,9 +8,10 @@ const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) 
   const year = 1996 + idx;
   return {
     year,
-    name: year === 2025 ? 'Valkyrie MK‑IV' : `Robot ${year}`,
-    description: `Our ${year} competition robot, engineered to tackle that year's FIRST challenge.`,
-    image: `/images/robots/${year}.png`,
+    name: `Robot ${year}`,
+    description: `See how we did in ${year} on our team's Blue Alliance page.`,
+    image: `/images/172logo.svg`// Placeholder image path; replace with actual robot images if available
+    ,
   };
 }).reverse();
 
@@ -19,24 +20,30 @@ function RobotCard({ year, name, description, image }: { year: number; name: str
     <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-sm hover:shadow-lg transition-shadow">
       <div className="relative h-56 w-full">
         <ImageWithFallback
-          src={image}
-          alt={`${year} robot`}
+          src={'/images/172logo.svg'}
+          alt={image}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-4">
-          <p className="text-xs uppercase tracking-wide text-zinc-400">{year}</p>
           <h3 className="text-xl font-black text-white leading-tight">{name}</h3>
         </div>
       </div>
       <div className="p-5">
-        <p className="text-sm leading-relaxed text-zinc-300">{description}</p>
+        <a
+          href={`https://www.thebluealliance.com/team/172/${year}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm leading-relaxed text-zinc-300 hover:text-[#db3e79] transition-colors cursor-pointer"
+        >
+          {description}
+        </a>
       </div>
     </article>
   );
 }
 
-export default function Design() {
+export default function Robots() {
   return (
     <>
       <head>

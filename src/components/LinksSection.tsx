@@ -48,6 +48,7 @@ export function LinksSection() {
               <a
                 key={index}
                 href={link.url}
+                target="_blank"
                 className="bg-gray-900 border-2 border-gray-800 hover:border-[#db3e79] rounded-lg p-6 transition-all hover:scale-105 group"
               >
                 <div className="flex items-center justify-between mb-3">
