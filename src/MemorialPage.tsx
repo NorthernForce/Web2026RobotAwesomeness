@@ -49,25 +49,11 @@ export function MemorialPage() {
             {/* Tribute Text */}
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                Clare Greenlaw was an extraordinary member of Northern Force - Team 172,
-                whose passion for robotics, dedication to the team, and kind spirit left
-                an indelible mark on everyone who had the privilege of knowing him.
-              </p>
+                Clare Greenlaw was a truly remarkable individual within Northern Force - Team 172. His deep-seated passion for robotics, unwavering commitment to our team, and genuinely kind nature left a lasting impression on all who had the good fortune to know him.
 
-              <p>
-                His enthusiasm was contagious, his work ethic was unmatched, and his
-                ability to bring the team together made him an irreplaceable part of our
-                robotics family. Whether he was problem-solving a complex mechanism,
-                mentoring new members, or simply bringing a smile to everyone's face,
-                Clare embodied the true spirit of FIRST Robotics.
-              </p>
+Clare's infectious enthusiasm, exceptional work ethic, and knack for fostering team unity made him an absolutely vital member of our robotics community. He consistently embodied the core principles of FIRST Robotics, whether he was tackling intricate mechanical challenges, guiding newer team members, or simply brightening everyone's day.
 
-              <p>
-                Beyond his technical skills and achievements, Clare's legacy lives on
-                in the values he championed: collaboration, perseverance, innovation,
-                and above all, kindness. He taught us that robotics is not just about
-                building machines—it's about building community, friendships, and memories
-                that last a lifetime.
+More than just his technical prowess, Clare's enduring legacy is found in the values he so passionately promoted: teamwork, resilience, creativity, and, most importantly, compassion. He showed us that robotics extends far beyond constructing machines; it's about cultivating connections, forging friendships, and creating cherished memories.
               </p>
 
               {/*
