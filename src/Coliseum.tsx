@@ -1,9 +1,10 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
-import coliseum1 from '../public/images/Gallery Photos/2026/IMG_5121.jpg';
-import coliseum2 from '../public/images/Gallery Photos/2026/IMG_5122.jpg';
-import coliseum3 from '../public/images/Gallery Photos/2026/IMG_5123.jpg';
+// Images in `public/` should be referenced by root-relative URLs
+const coliseum1 = '/images/Gallery Photos/2026/IMG_5121.JPG';
+const coliseum2 = '/images/Gallery Photos/2026/IMG_5122.JPG';
+const coliseum3 = '/images/Gallery Photos/2026/IMG_5123.JPG';
 import { ImageWithFallback } from './components/ImagewithFallback';
 import './holo-card.css';
 import { useRef, type ReactNode, type MouseEvent } from "react";
