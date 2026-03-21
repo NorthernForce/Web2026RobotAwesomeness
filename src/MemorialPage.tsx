@@ -1,6 +1,7 @@
 import { ImageWithFallback } from './components/ImagewithFallback';
 import { Heart } from 'lucide-react';
-import clareGreenlaw from "/images/clare greenlaw.png";
+// Use a root-relative URL to the image in public/. Encode the space as %20
+const clareGreenlaw = '/images/clare%20greenlaw.png';
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 import { Footer } from './components/Footer';
@@ -23,12 +24,13 @@ export function MemorialPage() {
         {/* Memorial Card */}
         <div className="bg-gray-900 border-4 border-pink-500 rounded-2xl overflow-hidden shadow-2xl shadow-pink-500/30 mb-12">
           {/* Image Section */}
-          <div className="relative h-96 overflow-hidden">
+          <div className="relative h-96 overflow-hidden rounded-lg bg-black flex items-center justify-center">
             <ImageWithFallback
               src={clareGreenlaw}
-              alt="Memorial"
-              className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              alt="Clare Greenlaw"
+              className="w-full h-full object-contain object-center" />
+            {/* subtle gradient to improve text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent"></div>
           </div>
 
           {/* Content Section */}
@@ -68,10 +70,11 @@ export function MemorialPage() {
                 that last a lifetime.
               </p>
 
-              <p className="text-pink-400 font-bold text-xl text-center italic mt-8">
+              {/*
                 "Clare's light continues to guide us forward. We build, we innovate,
                 and we compete in his honor."
               </p>
+              */}
             </div>
 
             {/* Impact Section */}
