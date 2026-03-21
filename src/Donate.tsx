@@ -152,10 +152,10 @@ export function Donate() {
                 {/* Vertical Dividers */}
 
                 {/* Divider between col 1 & 2 (md and up) */}
-                <div className="hidden md:block absolute top-2 bottom-2 left-[calc(33.33%-0.2rem)] w-[4px] bg-[#db3e79] rounded-full -translate-x-1/2 shadow-[0_0_10px_#db3e79]"></div>
+                <div className="hidden md:block absolute top-0 bottom-0 left-[calc(33.33%-0.2rem)] w-[4px] bg-[#db3e79] rounded-full -translate-x-1/2 shadow-[0_0_10px_#db3e79]"></div>
 
                 {/* Divider between col 2 & 3 (lg and up) */}
-                <div className="hidden lg:block absolute top-2 bottom-2 left-[calc(66.66%+0.3rem)] w-[4px] bg-[#db3e79] rounded-full -translate-x-1/2 shadow-[0_0_10px_#db3e79]"></div>
+                <div className="hidden lg:block absolute top-0 bottom-0 left-[calc(66.66%+0.3rem)] w-[4px] bg-[#db3e79] rounded-full -translate-x-1/2 shadow-[0_0_10px_#db3e79]"></div>
 
                 {/* First Name */}
                 <div>
