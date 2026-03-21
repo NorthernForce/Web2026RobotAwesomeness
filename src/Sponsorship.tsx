@@ -1,6 +1,6 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-import { Award, Zap, Users } from 'lucide-react';
+import { Award, Zap, Users, User } from 'lucide-react';
 import { ImageWithFallback } from './components/ImagewithFallback';
 
 // local sponsor assets (some logos live in src/assets/Sponsorships, some in public/images)
@@ -89,8 +89,11 @@ export function Sponsorship() {
                 {featuredSponsors.map((s) => (
                   <div key={s.name} className="bg-gray-900 border border-gray-800 p-6 rounded-lg flex flex-col items-center justify-center hover:border-[#db3e79] transition-colors">
                     <div className="w-full h-28 sm:h-32 md:h-36 mb-4 flex items-center justify-center px-6">
-                      {/* make logos fill height while preserving aspect ratio */}
-                      <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
+                      {s.logo ? (
+                        <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
+                      ) : (
+                        <User className="w-16 h-16 text-gray-700" />
+                      )}
                     </div>
                     <h3 className="text-lg font-bold text-white text-center">{s.name}</h3>
                   </div>
@@ -105,7 +108,11 @@ export function Sponsorship() {
                 {supportingSponsors.map((s) => (
                   <div key={s.name} className="bg-gray-900 border border-gray-800 p-3 rounded flex flex-col items-center justify-center text-center hover:border-[#db3e79] transition-colors">
                     <div className="w-full h-24 sm:h-28 md:h-28 flex items-center justify-center px-3">
-                      <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
+                      {s.logo ? (
+                        <ImageWithFallback src={s.logo} alt={`${s.name} logo`} className="h-full w-auto object-contain" />
+                      ) : (
+                        <User className="w-12 h-12 text-gray-700" />
+                      )}
                     </div>
                     {/* show name for clarity and accessibility */}
                     <div className="mt-2">

@@ -3,16 +3,13 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import printer from '../../public/images/Gallery Photos/2026/IMG_5094.jpg';
-import group from '../../public/images/Gallery Photos/2026/IMG_5103.jpg';
-import robot from '../../public/images/Gallery Photos/2026/IMG_5136.jpg';
-
-
 export default function HeroBanner() {
+  // Public images should be referenced by root-relative URLs (served from /)
+  // rather than imported. If you want bundler imports, move images to src/assets.
   const images = [
-    printer,
-    group,
-    robot,
+  '/images/Gallery Photos/2026/IMG_5094.JPG',
+  '/images/Gallery Photos/2026/IMG_5103.JPG',
+  '/images/Gallery Photos/2026/IMG_5136.JPG',
   ];
 
   return (

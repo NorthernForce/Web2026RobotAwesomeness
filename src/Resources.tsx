@@ -1,6 +1,6 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-import { BookOpen, FileText, Link as LinkIcon, Download } from 'lucide-react';
+import { BookOpen, Link as LinkIcon} from 'lucide-react';
 
 export function Resources() {
   const resources = [
@@ -13,15 +13,7 @@ export function Resources() {
         { title: 'CAD Basics', description: 'Introduction to computer-aided design', url: 'https://learn.onshape.com/' },
       ],
     },
-    {
-      category: 'Documentation',
-      icon: FileText,
-      items: [
-        { title: 'Design Specifications', description: 'Technical documentation for current season', url: '#' },
-        { title: 'Meeting Notes', description: 'Strategic planning and progress updates', url: '#' },
-        { title: 'Safety Procedures', description: 'Detailed safety guidelines and protocols', url: '#' },
-      ],
-    },
+
     {
       category: 'External Links',
       icon: LinkIcon,
@@ -44,7 +36,7 @@ export function Resources() {
           <div className="max-w-4xl mx-auto px-4 py-16 text-white">
             <div className="mb-12">
               <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
-                Resources & <span className="text-[#db3e79]">Documentation</span>
+                Resources & <span className="text-[#db3e79]">Learning Materials</span>
               </h1>
               <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
             </div>
@@ -52,7 +44,7 @@ export function Resources() {
             <div className="space-y-12">
               <section>
                 <p className="text-gray-300 mb-8">
-                  Access team documents, learning materials, and helpful resources for members and interested students. Everything you need to learn about robotics and our team's work.
+                  Access team learning materials and helpful resources for members and interested students. Everything you need to learn about robotics and our team's work.
                 </p>
               </section>
 
@@ -85,9 +77,6 @@ export function Resources() {
                               </h3>
                               <p className="text-sm text-gray-400">{item.description}</p>
                             </div>
-                            {section.category === 'Documentation' && (
-                              <Download className="w-5 h-5 text-gray-500 group-hover:text-[#db3e79] flex-shrink-0 mt-1 transition-colors" />
-                            )}
                           </div>
                         </a>
                       ))}
