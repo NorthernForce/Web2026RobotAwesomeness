@@ -36,7 +36,7 @@ export function Mentors() {
   ];
 
   const peopleToNote: MentorProfile[] = [
-    { name: 'Timothy Hodgdon (hes awesome)' },
+    { name: 'Placeholder' },
   ];
 
   const MentorCard = ({ person }: { person: MentorProfile }) => (
