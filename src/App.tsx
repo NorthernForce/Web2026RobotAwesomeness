@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Home from './Home';
-import Design from './Design';
+import Robots from './Robots';
 import Contact from './Contact';
 import Coliseum from './Coliseum';
 import { ComingSoonPage } from './ComingSoonPage';
@@ -33,7 +33,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/design" element={<Design />} />
+        <Route path="/robots" element={<Robots />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/coliseum" element={<Coliseum />} />
         <Route path="/comingsoonpage" element={<ComingSoonPage />} />
