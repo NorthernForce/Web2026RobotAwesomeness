@@ -20,8 +20,8 @@ function RobotCard({ year, name, description, image }: { year: number; name: str
     <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-sm hover:shadow-lg transition-shadow">
       <div className="relative h-56 w-full">
         <ImageWithFallback
-          src={'/images/172logo.svg'}
-          alt={image}
+          src={image}
+          alt={`${year} robot`}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
