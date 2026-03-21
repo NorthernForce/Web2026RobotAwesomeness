@@ -1,6 +1,8 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+// Asset image from Sponsorships folder
+import stemColiseumAsset from './assets/Sponsorships/STEM Coliseum.webp';
 // Images in `public/` should be referenced by root-relative URLs
 const coliseum1 = '/images/Gallery Photos/2026/IMG_5121.JPG';
 const coliseum2 = '/images/Gallery Photos/2026/IMG_5122.JPG';
@@ -96,6 +98,19 @@ export default function Coliseum() {
               <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
                 Where Team 172 builds, tests, and perfects our robots year-round
               </p>
+            </div>
+          </section>
+
+          {/* STEM Coliseum Banner (from Sponsorships assets) */}
+          <section className="py-12 px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="rounded-lg overflow-hidden border border-zinc-800">
+                <ImageWithFallback
+                  src={stemColiseumAsset}
+                  alt="STEM Coliseum"
+                  className="w-full h-28 md:h-40 object-contain"
+                />
+              </div>
             </div>
           </section>
 
