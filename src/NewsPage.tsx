@@ -7,17 +7,6 @@ import { Footer } from './components/Footer';
 export function NewsPage() {
   // Define calendar events
   const events = [
-    // month is 0-indexed, so 1 = February
-    { 
-      date: new Date(2040, 1, 4), 
-      title: 'why r u here',
-      time: '6:00 PM - 8:00 PM',
-      location: {
-        name: 'Example Location',
-        link: '#'
-      },
-      description: 'Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah', 
-    },
 
     // Pine Tree - Falmouth, ME
     { 
@@ -66,9 +55,9 @@ export function NewsPage() {
 
   const newsItems = [
     {
-      title: 'example news item',
-      date: 'January 4, 2040',
-      content: 'text example text example text example text example text example text example text example text example text example text example text example text example text example text example text example text example text example text example text example',
+      title: 'Pine Tree Regional Recap',
+      date: 'March 8, 2026',
+      content: 'We had an amazing showing at the Pine Tree Regional! Making it to 11 rank competed in the playoffs as the 1st Pick of Alliance 5 and were eliminated in the Double Elimination Bracket (Round 4).',
     },
   ];
 
@@ -78,18 +67,18 @@ export function NewsPage() {
   
   const upcomingEvents = events
     .filter(event => {
-      const eventDate = event.startDate || event.date;
+      const eventDate = event.startDate;
       return eventDate > today;
     })
     .sort((a, b) => {
-      const dateA = a.startDate || a.date;
-      const dateB = b.startDate || b.date;
+      const dateA = a.startDate;
+      const dateB = b.startDate;
       return dateA.getTime() - dateB.getTime();
     })
     .slice(0, 3);
 
   const formatEventDate = (event: typeof events[0]) => {
-    const startDate = event.startDate || event.date;
+    const startDate = event.startDate;
     if (event.endDate) {
       return `${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${event.endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
     }
