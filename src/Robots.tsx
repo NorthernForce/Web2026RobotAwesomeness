@@ -6,12 +6,35 @@ import { ImageWithFallback } from './components/ImagewithFallback';
 
 const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) => {
   const year = 1996 + idx;
+  // Try to find the robot image, fall back to logo if not available
+  const robotImages: { [key: number]: string } = {
+    2003: '/images/robots/robot2003.jpg',
+    2005: '/images/robots/robot2005.jpg',
+    2006: '/images/robots/robot2006.jpg',
+    2007: '/images/robots/robot2007.jpg',
+    2008: '/images/robots/robot2008.jpg',
+    2009: '/images/robots/robot2009.jpg',
+    2010: '/images/robots/robot2010.jpg',
+    2011: '/images/robots/robot2011.JPG',
+    2012: '/images/robots/robot2012.jpg',
+    2013: '/images/robots/robot2013.jpg',
+    2014: '/images/robots/robot2014.JPG',
+    2015: '/images/robots/robot2015.jpg',
+    2016: '/images/robots/robot2016.JPG',
+    2017: '/images/robots/robot2017.jpg',
+    2020: '/images/robots/robot2020.jpeg',
+    2022: '/images/robots/robot2022.jfif',
+    2023: '/images/robots/robot2023.jpeg',
+    2024: '/images/robots/robot2024.jpeg',
+    2025: '/images/robots/robot2025.jpg',
+    2026: '/images/robots/robot2026.jpg',
+  };
+  
   return {
     year,
     name: `Robot ${year}`,
     description: `See how we did in ${year} on our team's Blue Alliance page.`,
-    image: `/images/172logo.svg`// Placeholder image path; replace with actual robot images if available
-    ,
+    image: robotImages[year] || `/images/172logo.svg`,
   };
 }).reverse();
 

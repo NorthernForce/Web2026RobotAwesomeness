@@ -48,7 +48,7 @@ export function RobotHero() {
             <div className="absolute -inset-4 border-2 border-[#db3e79] opacity-20 -rotate-2"></div>
             <div className="relative aspect-[4/5] bg-zinc-900 overflow-hidden">
               <ImageWithFallback
-                src="/images/robots/robot2026.png"
+                src="/images/robots/robot2026 shooting 2K.jpeg"
                 alt="Robotics team" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
