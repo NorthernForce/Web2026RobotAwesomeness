@@ -1,7 +1,6 @@
 import { ImageWithFallback } from './components/ImagewithFallback';
 import { Heart } from 'lucide-react';
-// Use a root-relative URL to the image in public/. Encode the space as %20
-const clareGreenlaw = '/images/clare%20greenlaw.png';
+const clareGreenlaw = '/images/clare_formal.jpg';
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 import { Footer } from './components/Footer';
