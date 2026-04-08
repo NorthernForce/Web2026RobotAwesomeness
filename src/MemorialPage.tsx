@@ -107,7 +107,7 @@ More than just his technical prowess, Clare's enduring legacy is found in the va
                   In memory of Clare Greenlaw
                 </p>
                 <p className="text-pink-400 text-lg">
-                  A cherished friend, teammate, and inspiration
+                  A cherished friend, mentor, and inspiration
                 </p>
                 <div className="flex items-center justify-center gap-2 mt-4 text-pink-500">
                   <Heart className="w-8 h-8 fill-current" />
