@@ -10,8 +10,8 @@ export function Donate() {
   // Provide an optional redirect to an external Squarespace donation page.
   // Redirect is disabled by default. Set to true in code when you want automatic redirect.
   const [redirectEnabled, setRedirectEnabled] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState('https://');
-  const [openNewTab, setOpenNewTab] = useState(true);
+  const [redirectUrl, setRedirectUrl] = useState('https://example.com');
+  const [openNewTab, setOpenNewTab] = useState(false);
   const [popup, setPopup] = useState({ show: false, title: '', message: '' });
 
   function isValidUrl(u: string) {
@@ -43,15 +43,30 @@ export function Donate() {
   const Popup = () =>
     popup.show ? (
       <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-        <div className="bg-black border border-[#db3e79] rounded-xl p-6 max-w-sm w-full shadow-[0_0_20px_#db3e79] animate-fadeIn">
+        <div className="relative bg-black border border-[#db3e79] rounded-xl p-6 max-w-sm w-full shadow-[0_0_20px_#db3e79] animate-fadeIn">
+          {/* Close (X) button in top-right */}
+          <button
+            aria-label="Close"
+            onClick={() => setPopup({ show: false, title: '', message: '' })}
+            className="absolute top-3 right-3 text-zinc-400 hover:text-white bg-transparent p-1 rounded"
+          >
+            <span className="text-2xl leading-none">&times;</span>
+          </button>
+
           <h2 className="text-2xl font-bold text-[#db3e79] mb-3">{popup.title}</h2>
           <p className="text-gray-200 mb-6">{popup.message}</p>
           <div className="flex gap-2">
             <button
-              onClick={() => setPopup({ show: false, title: '', message: '' })}
+              onClick={() => {
+                if (!isValidUrl(redirectUrl)) {
+                  setPopup({ show: true, title: 'Invalid URL', message: 'Please set a valid Squarespace URL in the code.' });
+                  return;
+                }
+                window.open(redirectUrl, openNewTab ? '_blank' : '_self');
+              }}
               className="flex-1 bg-[#db3e79] hover:bg-[#b82e65] text-white font-bold py-2 rounded-lg transition"
             >
-              Close
+              Redirect
             </button>
           </div>
         </div>
