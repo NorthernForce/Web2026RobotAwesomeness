@@ -1,6 +1,8 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { BookOpen, Link as LinkIcon} from 'lucide-react';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 export function Resources() {
   const resources = [
@@ -30,20 +32,22 @@ export function Resources() {
   return (
     <><head>
       <title>Team 172 | Resources</title>
-    </head><div className="bg-black">
+    </head>
+    <FadeIn>
+      <div className="bg-black">
         <div className="min-h-screen">
           <Navigation />
           <div className="max-w-4xl mx-auto px-4 py-16 text-white">
             <div className="mb-12">
-              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
+              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase fade-in" data-fade>
                 Resources & <span className="text-[#db3e79]">Learning Materials</span>
               </h1>
-              <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
+              <div className="w-24 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
             </div>
 
             <div className="space-y-12">
               <section>
-                <p className="text-gray-300 mb-8">
+                <p className="text-gray-300 mb-8 fade-in" data-fade>
                   Access team learning materials and helpful resources for members and interested students. Everything you need to learn about robotics and our team's work.
                 </p>
               </section>
@@ -54,7 +58,7 @@ export function Resources() {
                   <section key={idx}>
                     <div className="flex items-center gap-3 mb-6">
                       <IconComponent className="w-8 h-8 text-[#db3e79]" />
-                      <h2 className="text-2xl font-bold text-white">{section.category}</h2>
+                      <h2 className="text-2xl font-bold text-white fade-in" data-fade>{section.category}</h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-11">
                       {section.items.map((item, itemIdx) => (
@@ -68,7 +72,7 @@ export function Resources() {
                           } }
                           target={item.url.startsWith('http') ? '_blank' : undefined}
                           rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="bg-gray-900 border border-gray-800 p-4 rounded-lg hover:border-[#db3e79] transition-colors group"
+                          className="bg-gray-900 border border-gray-800 p-4 rounded-lg hover:border-[#db3e79] transition-colors group fade-in" data-fade
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div>
@@ -86,25 +90,26 @@ export function Resources() {
               })}
 
               <section className="bg-gray-900 border-2 border-[#db3e79] p-8 rounded-lg">
-                <h2 className="text-2xl font-bold text-white mb-3">Need Something Specific?</h2>
-                <p className="text-gray-300 mb-6">
+                <h2 className="text-2xl font-bold text-white mb-3 fade-in" data-fade>Need Something Specific?</h2>
+                <p className="text-gray-300 mb-6 fade-in" data-fade>
                   Can't find what you're looking for? Contact us and we'll help you find the resources you need.
                 </p>
                 <a
                   href="/contact"
-                  className="inline-block bg-[#db3e79] text-white px-6 py-2 rounded font-semibold hover:bg-opacity-80 transition-all"
+                  className="inline-block bg-[#db3e79] text-white px-6 py-2 rounded font-semibold hover:bg-opacity-80 transition-all fade-in" data-fade
                 >
                   Contact Us
                 </a>
               </section>
 
               <section className="pt-8 border-t border-gray-700">
-                <p className="text-sm text-gray-500">Last updated: February 2026</p>
+                <p className="text-sm text-gray-500 fade-in" data-fade>Last updated: February 2026</p>
               </section>
             </div>
           </div>
         </div>
         <Footer />
-      </div></>
+      </div>
+    </FadeIn></>
   );
 }

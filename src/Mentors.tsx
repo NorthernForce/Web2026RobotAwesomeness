@@ -1,6 +1,8 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { User } from 'lucide-react';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 interface MentorProfile {
   name: string;
@@ -36,7 +38,7 @@ export function Mentors() {
   ];
 
   const peopleToNote: MentorProfile[] = [
-    { name: 'Placeholder' },
+    { name: 'ur mom' },
   ];
 
   const MentorCard = ({ person }: { person: MentorProfile }) => (
@@ -55,7 +57,7 @@ export function Mentors() {
   );
 
   return (
-    <>
+    <FadeIn>
       <head>
         <title>Team 172 | Mentors</title>
       </head>
@@ -65,11 +67,11 @@ export function Mentors() {
           <div className="max-w-6xl mx-auto px-4 py-16 text-white">
             {/* Page Header */}
             <div className="mb-16">
-              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
+              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase fade-in" data-fade>
                 Our <span className="text-[#db3e79]">Mentors</span>
               </h1>
-              <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
-              <p className="text-gray-300 text-lg max-w-3xl">
+              <div className="w-24 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
+              <p className="text-gray-300 text-lg max-w-3xl fade-in" data-fade>
                 Northern Force Team 172 is guided by dedicated mentors who share their expertise and passion for STEM education. Our mentors come from diverse backgrounds and bring invaluable knowledge and experience to our team.
               </p>
             </div>
@@ -77,11 +79,11 @@ export function Mentors() {
             {/* Team Leaders Section */}
             {leaders.length > 0 && (
               <section className="mb-20">
-                <h2 className="text-3xl font-bold text-white mb-2 uppercase">
+                <h2 className="text-3xl font-bold text-white mb-2 uppercase fade-in" data-fade>
                   <span className="text-[#db3e79]">Leadership</span>
                 </h2>
-                <div className="w-16 h-1 bg-[#db3e79] mb-8"></div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="w-16 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 fade-in" data-fade>
                   {leaders.map((person, idx) => (
                     <MentorCard key={idx} person={person} />
                   ))}
@@ -91,11 +93,11 @@ export function Mentors() {
 
             {/* Mentors Section */}
             <section className="mb-20">
-              <h2 className="text-3xl font-bold text-white mb-2 uppercase">
+              <h2 className="text-3xl font-bold text-white mb-2 uppercase fade-in" data-fade>
                 <span className="text-[#db3e79]">Mentors</span>
               </h2>
-              <div className="w-16 h-1 bg-[#db3e79] mb-8"></div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="w-16 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 fade-in" data-fade>
                 {mentors.map((person, idx) => (
                   <MentorCard key={idx} person={person} />
                 ))}
@@ -105,11 +107,11 @@ export function Mentors() {
             {/* Notable People Section */}
             {peopleToNote.length > 0 && (
               <section className="mb-20">
-                <h2 className="text-3xl font-bold text-white mb-2 uppercase">
+                <h2 className="text-3xl font-bold text-white mb-2 uppercase fade-in" data-fade>
                   <span className="text-[#db3e79]">Notable People</span>
                 </h2>
-                <div className="w-16 h-1 bg-[#db3e79] mb-8"></div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="w-16 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 fade-in" data-fade>
                   {peopleToNote.map((person, idx) => (
                     <MentorCard key={idx} person={person} />
                   ))}
@@ -120,6 +122,6 @@ export function Mentors() {
           <Footer />
         </div>
       </div>
-    </>
+    </FadeIn>
   );
 }

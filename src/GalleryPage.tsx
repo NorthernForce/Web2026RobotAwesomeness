@@ -4,6 +4,8 @@ import { X, ChevronLeft, ChevronRight, FolderClosed } from 'lucide-react';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 interface Photo {
   id: number;
@@ -136,7 +138,7 @@ export function GalleryPage() {
 
           {/* Folder Grid */}
           {!activeFolder && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" data-fade>
               {Object.keys(folderMap).sort().map(folder => (
                 <div
                   key={folder}
@@ -155,15 +157,15 @@ export function GalleryPage() {
           {/* Photo Grid */}
           {activeFolder && (
             <>
-              <h3 className="text-3xl font-bold mb-4 text-center">{activeFolder}</h3>
+              <h3 className="text-3xl font-bold mb-4 text-center fade-in" data-fade>{activeFolder}</h3>
               <button
                 onClick={() => setActiveFolder(null)}
-                className="mb-6 px-6 py-3 bg-pink-600 rounded-lg"
+                className="mb-6 px-6 py-3 bg-pink-600 rounded-lg fade-in" data-fade
               >
                 Back to Folders
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" data-fade>
                 {folderMap[activeFolder].map(photo => (
                   <div
                     key={photo.id}
@@ -184,10 +186,10 @@ export function GalleryPage() {
           {/* Videos Section */}
           {videos.length > 0 && (
             <div className="mt-16" ref={videosRef}>
-              <h3 className="text-3xl font-bold mb-4 text-center">Videos</h3>
-              <div className="w-52 h-1 bg-pink-500 mx-auto mb-8"></div>
+              <h3 className="text-3xl font-bold mb-4 text-center fade-in" data-fade>Videos</h3>
+              <div className="w-52 h-1 bg-pink-500 mx-auto mb-8 fade-in" data-fade></div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" data-fade>
                 {videos.map(video => (
                   <div
                     key={video.id}

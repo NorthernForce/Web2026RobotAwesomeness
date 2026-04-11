@@ -3,6 +3,8 @@ import { EventCalendar } from './components/EventCalendar';
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 import { Footer } from './components/Footer';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 export function NewsPage() {
   // Define calendar events
@@ -86,14 +88,15 @@ export function NewsPage() {
   };
 
   return (
-    <>
-    <head>
-      <title>Team 172 | News & Events</title>
-    </head>
-    <div className="bg-black min-h-screen">
+    <FadeIn>
+      <>
+      <head>
+        <title>Team 172 | News & Events</title>
+      </head>
+      <div className="bg-black min-h-screen">
         <Navigation />
         <div className="max-w-[1800px] mx-auto px-4 py-8">
-          <h1 className="text-5xl font-bold text-white mb-8 text-center">
+          <h1 className="text-5xl font-bold text-white mb-8 text-center tracking-tighter uppercase fade-in" data-fade>
             Team News & Events
           </h1>
 
@@ -101,8 +104,10 @@ export function NewsPage() {
           <div className="mb-8">
             <div className="bg-gray-900 border-4 rounded-xl p-8 lg:p-16 shadow-2xl" style={{ borderColor: '#db3e79', boxShadow: '0 25px 50px -12px rgba(219, 62, 121, 0.2)' }}>
               <div className="flex items-center justify-center gap-4 mb-8">
-                <Calendar className="w-12 h-12" style={{ color: '#db3e79' }} />
-                <h2 className="text-4xl font-bold text-white">Event Calendar</h2>
+                <Calendar className="w-12 h-12 fade-in" data-fade style={{ color: '#db3e79' }} />
+                <h2 className="text-4xl font-bold text-white fade-in" data-fade>
+                  Event Calendar
+                </h2>
               </div>
 
               <EventCalendar events={events} />
@@ -112,10 +117,12 @@ export function NewsPage() {
           {/* Upcoming Events and News in Two Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Upcoming Events */}
-            <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
+            <div className="bg-gray-900 border-2 rounded-lg p-8 fade-in" data-fade style={{ borderColor: '#db3e79' }}>
               <div className="flex items-center gap-2 mb-6">
-                <Clock className="w-7 h-7" style={{ color: '#db3e79' }} />
-                <h3 className="text-2xl font-bold text-white">Upcoming Events</h3>
+                <Clock className="w-7 h-7 fade-in" data-fade style={{ color: '#db3e79' }} />
+                <h3 className="text-2xl font-bold text-white">
+                  Upcoming Events
+                </h3>
               </div>
               <ul className="space-y-4">
                 {upcomingEvents.map((event, index) => (
@@ -128,8 +135,10 @@ export function NewsPage() {
             </div>
 
             {/* Latest News */}
-            <div className="bg-gray-900 border-2 rounded-lg p-8" style={{ borderColor: '#db3e79' }}>
-              <h3 className="text-2xl font-bold text-white mb-6">Latest News</h3>
+            <div className="bg-gray-900 border-2 rounded-lg p-8 fade-in" data-fade style={{ borderColor: '#db3e79' }}>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Latest News
+              </h3>
               <div className="space-y-4">
                 {newsItems.map((item, index) => (
                   <article
@@ -154,5 +163,6 @@ export function NewsPage() {
         <LinksSection />
         <Footer />
       </div></>
+    </FadeIn>
   );
 }

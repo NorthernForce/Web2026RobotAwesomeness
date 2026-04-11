@@ -2,6 +2,8 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
 import { useState } from 'react';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 import './Donate.css';
 
 export function Donate() {
@@ -82,27 +84,28 @@ export function Donate() {
       <div className="bg-black text-white min-h-screen">
         <Navigation />
         <Popup />
+        <FadeIn>
 
         <main className="max-w-3xl mx-auto px-4 py-20">
           <div className="mb-8">
-            <h1 className="text-5xl font-black mb-2 tracking-tighter uppercase">
+            <h1 className="text-5xl font-black mb-2 tracking-tighter uppercase fade-in" data-fade>
               Support Our <span className="text-[#db3e79]">Mission</span>
             </h1>
-            <div className="w-24 h-1 bg-[#db3e79] mb-6"></div>
+            <div className="w-24 h-1 bg-[#db3e79] mb-6 fade-in" data-fade></div>
           </div>
 
           <section>
-            <p className="text-gray-300 mb-8">
+            <p className="text-gray-300 mb-8 fade-in" data-fade>
               Your donation directly impacts the future of STEM education and empowers our students to innovate, compete,
               and inspire others. Every contribution helps us build incredible robots and change lives.
             </p>
           </section>
 
           <section className="bg-[#0f0f0f] border border-zinc-800 rounded-lg p-6">
-            <h3 className="text-lg font-semibold mb-3">Optional: Redirect donors to Squarespace</h3>
+            <h3 className="text-lg font-semibold mb-3 fade-in" data-fade>Optional: Redirect donors to Squarespace</h3>
 
             <div className="flex items-center gap-4 mb-4">
-              <label className="inline-flex items-center gap-2">
+              <label className="inline-flex items-center gap-2 fade-in" data-fade>
                 <input
                   type="checkbox"
                   checked={openNewTab}
@@ -119,7 +122,7 @@ export function Donate() {
                   value={redirectUrl}
                   readOnly
                   onClick={(e) => (e.currentTarget as HTMLInputElement).select()}
-                  className="flex-1 bg-black border border-zinc-700 px-3 py-2 rounded-md text-white read-only:cursor-text"
+                  className="flex-1 bg-black border border-zinc-700 px-3 py-2 rounded-md text-white read-only:cursor-text fade-in" data-fade
                 />
 
                 <button
@@ -135,7 +138,7 @@ export function Donate() {
                       setPopup({ show: true, title: 'Copy failed', message: 'Could not copy to clipboard.' });
                     }
                   }}
-                  className="px-3 py-2 bg-[#db3e79] hover:bg-[#b82e65] text-black rounded-md"
+                  className="px-3 py-2 bg-[#db3e79] hover:bg-[#b82e65] text-black rounded-md fade-in" data-fade
                 >
                   Copy
                 </button>
@@ -148,19 +151,19 @@ export function Donate() {
                     }
                     window.open(redirectUrl, openNewTab ? '_blank' : '_self');
                   }}
-                  className="px-3 py-2 bg-zinc-800 border border-zinc-700 text-white rounded-md"
+                  className="px-3 py-2 bg-zinc-800 border border-zinc-700 text-white rounded-md fade-in" data-fade
                 >
                   Open
                 </button>
               </div>
 
-              <p className="text-xs text-zinc-500 mt-2">Click Copy to copy the donation URL. Use Open to manually visit the donation page.</p>
+              <p className="text-xs text-zinc-500 mt-2 fade-in" data-fade>Click Copy to copy the donation URL. Use Open to manually visit the donation page.</p>
             </div>
 
             <div className="mt-2">
               <button
                 onClick={handleDonate}
-                className="px-6 py-3 bg-[#db3e79] hover:bg-[#b82e65] text-black font-black rounded-lg"
+                className="px-6 py-3 bg-[#db3e79] hover:bg-[#b82e65] text-black font-black rounded-lg fade-in" data-fade
               >
                 Donate
               </button>
@@ -170,6 +173,7 @@ export function Donate() {
 
         <LinksSection />
         <Footer />
+        </FadeIn>
       </div>
     </>
   );

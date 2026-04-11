@@ -4,6 +4,8 @@ import { RobotHero } from './components/RobotHero';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
 import { ImageWithFallback } from './components/ImagewithFallback';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) => {
   const year = 1996 + idx;

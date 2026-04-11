@@ -2,6 +2,8 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { LinksSection } from './components/LinksSection';
 import { Users, Target, Heart } from 'lucide-react';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 export function OurTeam() {
   const teamHighlights = [
@@ -37,22 +39,23 @@ export function OurTeam() {
   ];
 
   return (
-    <><head>
-      <title>Team 172 | Our Team</title>
-    </head><div className="bg-black">
-        <div className="min-h-screen">
-          <Navigation />
+    <FadeIn>
+      <><head>
+        <title>Team 172 | Our Team</title>
+      </head><div className="bg-black">
+          <div className="min-h-screen">
+            <Navigation />
           <div className="max-w-4xl mx-auto px-4 py-16 text-white">
             <div className="mb-12">
-              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase">
+              <h1 className="text-5xl font-black mb-4 text-white tracking-tighter uppercase fade-in" data-fade>
                 Our <span className="text-[#db3e79]">Team</span>
               </h1>
-              <div className="w-24 h-1 bg-[#db3e79] mb-8"></div>
+              <div className="w-24 h-1 bg-[#db3e79] mb-8 fade-in" data-fade></div>
             </div>
 
             <div className="space-y-12">
               <section>
-                <p className="text-gray-300 mb-8">
+                <p className="text-gray-300 mb-8 fade-in" data-fade>
                   Northern Force Team 172 is a vibrant community of students dedicated to advancing science, technology, engineering, and mathematics through competitive robotics. Since our founding, we've grown into one of the most innovative teams in our region.
                 </p>
               </section>
@@ -61,7 +64,7 @@ export function OurTeam() {
                 {teamHighlights.map((highlight, idx) => {
                   const IconComponent = highlight.icon;
                   return (
-                    <div key={idx} className="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-[#db3e79] transition-colors">
+                    <div key={idx} className="bg-gray-900 border border-gray-800 p-6 rounded-lg hover:border-[#db3e79] transition-colors fade-in" data-fade>
                       <IconComponent className="w-12 h-12 text-[#db3e79] mb-4" />
                       <h3 className="text-xl font-bold text-white mb-3">{highlight.title}</h3>
                       {Array.isArray(highlight.description) ? (
@@ -82,28 +85,28 @@ export function OurTeam() {
               </div>
 
               <section className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">What We Do</h2>
+                <h2 className="text-2xl font-bold text-white fade-in" data-fade>What We Do</h2>
                 <div className="space-y-4 text-gray-300">
-                  <div>
+                  <div className="fade-in" data-fade>
                     <h3 className="text-lg font-semibold text-white mb-2">Design & Build</h3>
                     <p>Our engineering subteams work collaboratively to design and build competitive robots that perform at the highest level during competitions.</p>
                   </div>
-                  <div>
+                  <div className="fade-in" data-fade>
                     <h3 className="text-lg font-semibold text-white mb-2">Programming & Controls</h3>
                     <p>Our software team develops the code that brings our robots to life, implementing complex autonomous routines and reliable operator controls.</p>
                   </div>
-                  <div>
+                  <div className="fade-in" data-fade>
                     <h3 className="text-lg font-semibold text-white mb-2">Business & Operations</h3>
                     <p>We manage sponsorships, budgets, logistics, and community outreach to ensure our team runs smoothly and makes a positive impact.</p>
                   </div>
-                  <div>
+                  <div className="fade-in" data-fade>
                     <h3 className="text-lg font-semibold text-white mb-2">Outreach & Community</h3>
                     <p>We're passionate about inspiring the next generation of engineers through demonstrations, mentoring, and community engagement. We support local FIRST LEGO League (FLL) teams and conduct robotics demonstrations at schools throughout our region to spark interest in STEM.</p>
                   </div>
                 </div>
               </section>
 
-              <section className="bg-gray-900 border-2 border-[#db3e79] p-8 rounded-lg">
+              <section className="bg-gray-900 border-2 border-[#db3e79] p-8 rounded-lg fade-in" data-fade>
                 <h2 className="text-2xl font-bold text-white mb-3">Interested in Joining?</h2>
                 <p className="text-gray-300 mb-6">
                   We're always looking for passionate students who want to be part of something special. No prior robotics experience required—just bring your enthusiasm and willingness to learn!
@@ -121,5 +124,6 @@ export function OurTeam() {
         <LinksSection />
         <Footer />
       </div></>
+    </FadeIn>
   );
 }
