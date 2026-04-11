@@ -116,14 +116,14 @@ export function GalleryPage() {
       <div className="fixed top-1/2 right-6 -translate-y-1/2 flex flex-col gap-10 z-50 text-white text-4xl">
         <button
           onClick={scrollToPhotos}
-          className="px-10 py-5 rounded-2xl bg-pink-600 text-white font-bold shadow-[0_0_15px_rgba(236,72,153,0.8)] hover:shadow-[0_0_25px_rgba(236,72,153,1)] hover:bg-pink-500 border-4 border-pink-400 transition-all duration-300"
+          className="px-10 py-5 rounded-2xl bg-pink-600 text-white font-bold shadow-[0_0_15px_rgba(219,62,121,0.8)] hover:shadow-[0_0_25px_rgba(219,62,121,1)] hover:bg-pink-500 border-4 border-pink-400 transition-all duration-300"
         >
           Photos
         </button>
 
         <button
           onClick={scrollToVideos}
-          className="px-10 py-5 rounded-2xl bg-pink-600 text-white font-bold shadow-[0_0_15px_rgba(236,72,153,0.8)] hover:shadow-[0_0_25px_rgba(236,72,153,1)] hover:bg-pink-500 border-4 border-pink-400 transition-all duration-300"
+          className="px-10 py-5 rounded-2xl bg-pink-600 text-white font-bold shadow-[0_0_15px_rgba(219,62,121,0.8)] hover:shadow-[0_0_25px_rgba(219,62,121,1)] hover:bg-pink-500 border-4 border-pink-400 transition-all duration-300"
         >
           Videos
         </button>
