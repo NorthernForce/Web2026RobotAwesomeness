@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { RobotHero } from './components/RobotHero';
 import { Footer } from './components/Footer';
@@ -22,11 +23,13 @@ const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) 
     2015: '/images/robots/robot2015.jpg',
     2016: '/images/robots/robot2016.JPG',
     2017: '/images/robots/robot2017.jpg',
+    2018: '/images/robots/robot2018.jpg',
+    2019: '/images/robots/robot2019.JPG',
     2020: '/images/robots/robot2020.jpeg',
     2022: '/images/robots/robot2022.jfif',
     2023: '/images/robots/robot2023.jpeg',
     2024: '/images/robots/robot2024.jpeg',
-    2025: '/images/robots/robot2025.jpg',
+    2025: '/images/robots/robot2025crop.jpg',
     2026: '/images/robots/robot2026.jpg',
   };
   
@@ -36,33 +39,65 @@ const robots = Array.from({ length: new Date().getFullYear() - 1995 }, (_, idx) 
     description: `See how we did in ${year} on our team's Blue Alliance page.`,
     image: robotImages[year] || `/images/172logo.svg`,
   };
-}).reverse();
+}).filter(robot => robot.year !== 2001 && robot.year !== 2002).reverse();
 
 function RobotCard({ year, name, description, image }: { year: number; name: string; description: string; image: string }) {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const isPlaceholder = image === `/images/172logo.svg`;
+
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-sm hover:shadow-lg transition-shadow">
-      <div className="relative h-56 w-full">
-        <ImageWithFallback
-          src={image}
-          alt={`${year} robot`}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="text-xl font-black text-white leading-tight">{name}</h3>
-        </div>
-      </div>
-      <div className="p-5">
-        <a
-          href={`https://www.thebluealliance.com/team/172/${year}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm leading-relaxed text-zinc-300 hover:text-[#db3e79] transition-colors cursor-pointer"
+    <>
+      <article className="flex flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 shadow-sm hover:shadow-lg transition-shadow">
+        <div 
+          className={`relative h-56 w-full ${!isPlaceholder ? 'cursor-pointer' : ''}`}
+          onClick={() => !isPlaceholder && setSelectedImage(image)}
         >
-          {description}
-        </a>
-      </div>
-    </article>
+          <ImageWithFallback
+            src={image}
+            alt={`${year} robot`}
+            className="h-full w-full object-contain"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <h3 className="text-xl font-black text-white leading-tight">{name}</h3>
+          </div>
+        </div>
+        <div className="p-5">
+          <a
+            href={`https://www.thebluealliance.com/team/172/${year}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm leading-relaxed text-zinc-300 hover:text-[#db3e79] transition-colors cursor-pointer"
+          >
+            {description}
+          </a>
+        </div>
+      </article>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage}
+              alt="Enlarged robot"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/75 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors text-xl"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
