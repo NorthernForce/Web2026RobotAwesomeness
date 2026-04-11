@@ -7,9 +7,10 @@ import { ImageWithFallback } from './components/ImagewithFallback';
 import brookfieldLogo from './assets/Sponsorships/brookfield-properties-logo-png_seeklogo-339528.png'
 import adobeLogo from './assets/Sponsorships/adobe-color.svg'
 import stemColiseumLogo from './assets/Sponsorships/STEM Coliseum.webp'
-import falmouthSchoolLogo from './assets/Sponsorships/Logo_FalmouthSChoolDistrict_Maine_September2021.webp'
+import falmouthSchoolLogo from './assets/Sponsorships/Falmouth-Schools.png'
 import tftLogo from './assets/Sponsorships/tftlogo.svg'
-import gofarLogo from './assets/Sponsorships/11672.webp'
+import gofarLogo from './assets/Sponsorships/GoFAR.png'
+import gorhamLogo from './assets/Sponsorships/GorhamHighschool.png'
 
 import aecLogo from './assets/Sponsorships/logo-aec.png'
 import lancoLogo from './assets/Sponsorships/lanco-integrated-logo-white.svg'
@@ -21,7 +22,7 @@ export function Sponsorship() {
   // Featured (larger) sponsors — show prominent logo spaces
   const featuredSponsors = [
     { name: 'Brookfield Properties', logo: brookfieldLogo },
-    { name: 'GoFAR', logo: undefined },
+    { name: 'GoFAR', logo: gofarLogo },
     { name: 'Adobe', logo: adobeLogo },
     { name: 'Haller Patel Family', logo: undefined },
     { name: 'Falmouth High School', logo: falmouthSchoolLogo },
@@ -31,7 +32,7 @@ export function Sponsorship() {
 
   // Supporting (smaller) sponsors — compact logos or name-only boxes
   const supportingSponsors = [
-    { name: 'Gorham High School', logo: gofarLogo },
+    { name: 'Gorham High School', logo:  gorhamLogo},
     { name: 'AEC Engineering', logo: aecLogo },
     { name: 'Falmouth Lions Club', logo: falmouthLionsLogo },
     { name: 'Lockman Family', logo: undefined },

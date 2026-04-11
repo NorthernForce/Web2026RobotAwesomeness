@@ -16,6 +16,7 @@ import { Resources } from './Resources';
 import { OurTeam } from './OurTeam';
 import { Mentors } from './Mentors';
 import { Donate } from './Donate';
+import ThankYou from './ThankYou';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/team" element={<OurTeam />} />
         <Route path="/mentors" element={<Mentors />} />
         <Route path="/donate" element={<Donate />} />
+  <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/easterEgg" element={<HahaUFoundMePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
