@@ -4,26 +4,30 @@ import clareGreenlaw from "/images/clare greenlaw.png";
 import { Navigation } from './components/Navigation';
 import { LinksSection } from './components/LinksSection';
 import { Footer } from './components/Footer';
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 export function MemorialPage() {
+
   return (
     <>
     <head>
       <title>Team 172 | Memorial</title>
     </head>
-      <Navigation />
+    <Navigation />
+    <FadeIn>
       <div className="min-h-screen bg-black text-white pt-32 pb-16">
         <div className="max-w-4xl mx-auto px-4">
         {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4">In Loving Memory</h1>
+            <h1 data-fade className="text-5xl font-bold mb-4 fade-in">In Loving Memory</h1>
             <div className="w-32 h-1 bg-pink-500 mx-auto mb-8"></div>
           </div>
 
         {/* Memorial Card */}
         <div className="bg-gray-900 border-4 border-pink-500 rounded-2xl overflow-hidden shadow-2xl shadow-pink-500/30 mb-12">
           {/* Image Section */}
-          <div className="relative h-96 overflow-hidden">
+          <div className="relative h-96 overflow-hidden fade-in" data-fade>
             <ImageWithFallback
               src={clareGreenlaw}
               alt="Memorial"
@@ -34,10 +38,10 @@ export function MemorialPage() {
           {/* Content Section */}
           <div className="p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-2 fade-in" data-fade>
                 Clare Greenlaw
               </h2>
-              <div className="flex items-center justify-center gap-2 text-pink-500 text-xl">
+              <div className="flex items-center justify-center gap-2 text-pink-500 text-xl fade-in" data-fade>
                 <Heart className="w-6 h-6 fill-current" />
                 <span>Forever in Our Hearts</span>
                 <Heart className="w-6 h-6 fill-current" />
@@ -46,13 +50,13 @@ export function MemorialPage() {
 
             {/* Tribute Text */}
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
-              <p>
+              <p className="fade-in" data-fade>
                 Clare Greenlaw was an extraordinary member of Northern Force - Team 172,
                 whose passion for robotics, dedication to the team, and kind spirit left
                 an indelible mark on everyone who had the privilege of knowing him.
               </p>
 
-              <p>
+              <p className="fade-in" data-fade>
                 His enthusiasm was contagious, his work ethic was unmatched, and his
                 ability to bring the team together made him an irreplaceable part of our
                 robotics family. Whether he was problem-solving a complex mechanism,
@@ -60,7 +64,7 @@ export function MemorialPage() {
                 Clare embodied the true spirit of FIRST Robotics.
               </p>
 
-              <p>
+              <p className="fade-in" data-fade>
                 Beyond his technical skills and achievements, Clare's legacy lives on
                 in the values he championed: collaboration, perseverance, innovation,
                 and above all, kindness. He taught us that robotics is not just about
@@ -68,7 +72,7 @@ export function MemorialPage() {
                 that last a lifetime.
               </p>
 
-              <p className="text-pink-400 font-bold text-xl text-center italic mt-8">
+              <p className="text-pink-400 font-bold text-xl text-center italic mt-8 fade-in" data-fade>
                 "Clare's light continues to guide us forward. We build, we innovate,
                 and we compete in his honor."
               </p>
@@ -76,34 +80,42 @@ export function MemorialPage() {
 
             {/* Impact Section */}
             <div className="mt-12 pt-8 border-t-2 border-pink-500">
-              <h3 className="text-3xl font-bold text-center mb-6 text-white">
+              <h3 className="text-3xl font-bold text-center mb-6 text-white fade-in" data-fade>
                 His Impact on Team 172
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
-                  <h4 className="text-xl font-bold text-pink-500 mb-3">Mentorship</h4>
-                  <p className="text-gray-300">
+                  <h4 className="text-xl font-bold text-pink-500 mb-3 fade-in" data-fade>
+                    Mentorship
+                  </h4>
+                  <p className="text-gray-300 fade-in" data-fade>
                     Clare dedicated countless hours mentoring new team members,
                     ensuring everyone felt welcome and valued.
                   </p>
                 </div>
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
-                  <h4 className="text-xl font-bold text-pink-500 mb-3">Innovation</h4>
-                  <p className="text-gray-300">
+                  <h4 className="text-xl font-bold text-pink-500 mb-3 fade-in" data-fade>
+                    Innovation
+                  </h4>
+                  <p className="text-gray-300 fade-in" data-fade>
                     His creative problem-solving and technical expertise helped
                     drive many of our most successful robot designs.
                   </p>
                 </div>
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
-                  <h4 className="text-xl font-bold text-pink-500 mb-3">Team Spirit</h4>
-                  <p className="text-gray-300">
+                  <h4 className="text-xl font-bold text-pink-500 mb-3 fade-in" data-fade>
+                    Team Spirit
+                  </h4>
+                  <p className="text-gray-300 fade-in" data-fade>
                     Clare's positive energy and dedication brought our team closer
                     together, creating lasting bonds.
                   </p>
                 </div>
                 <div className="bg-black/50 p-6 rounded-lg border-2 border-pink-500/30">
-                  <h4 className="text-xl font-bold text-pink-500 mb-3">Legacy</h4>
-                  <p className="text-gray-300">
+                  <h4 className="text-xl font-bold text-pink-500 mb-3 fade-in" data-fade>
+                    Legacy
+                  </h4>
+                  <p className="text-gray-300 fade-in" data-fade>
                     Every competition, every build session, every achievement—we
                     carry Clare's memory and values forward.
                   </p>
@@ -114,13 +126,13 @@ export function MemorialPage() {
             {/* Closing Message */}
             <div className="mt-12 text-center">
               <div className="inline-block bg-pink-500/20 border-2 border-pink-500 rounded-lg px-8 py-6">
-                <p className="text-2xl text-white font-bold mb-2">
+                <p className="text-2xl text-white font-bold mb-2 fade-in" data-fade>
                   In memory of Clare Greenlaw
                 </p>
-                <p className="text-pink-400 text-lg">
+                <p className="text-pink-400 text-lg fade-in" data-fade>
                   A cherished friend, teammate, and inspiration
                 </p>
-                <div className="flex items-center justify-center gap-2 mt-4 text-pink-500">
+                <div className="flex items-center justify-center gap-2 mt-4 text-pink-500 fade-in" data-fade>
                   <Heart className="w-8 h-8 fill-current" />
                   <Heart className="w-8 h-8 fill-current" />
                   <Heart className="w-8 h-8 fill-current" />
@@ -132,6 +144,7 @@ export function MemorialPage() {
       </div>
     </div>
     <LinksSection />
-    <Footer /></>
+    <Footer />
+    </FadeIn> </>
   );
 }

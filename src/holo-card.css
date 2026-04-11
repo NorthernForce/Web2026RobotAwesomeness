@@ -5,11 +5,11 @@
   padding: 4px;
   background: linear-gradient(
     135deg,
-    #db3e79,
-    #7f5af0,
-    #db3e79,
-    #ae00ff,
-    #db3e79
+    #ff3582,
+    #ff03ff,
+    #cc00ff,
+    #ff00d4,
+    #f122e7
   );
   background-size: 400% 400%;
   animation: holoMove 12s ease infinite;

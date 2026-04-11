@@ -10,6 +10,8 @@ const coliseum3 = '/images/Gallery Photos/2026/IMG_5123.JPG';
 import { ImageWithFallback } from './components/ImagewithFallback';
 import './holo-card.css';
 import { useRef, type ReactNode, type MouseEvent } from "react";
+import { FadeIn } from "./components/FadeIn";
+import "./Animation.css";
 
 interface HoloTiltCardProps {
   children: ReactNode;
@@ -88,14 +90,19 @@ export default function Coliseum() {
 
       <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
         <Navigation />
+        <FadeIn>
         <main>
 
           {/* Hero Section */}
           <section className="relative py-32 px-4 bg-gradient-to-b from-[#1a1a1a] to-black border-b border-zinc-900">
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-sm uppercase font-bold tracking-[0.2em] text-[#db3e79] mb-4">Our Facility</p>
-              <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tighter mb-6">The Coliseum</h1>
-              <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
+              <p className="text-sm uppercase font-bold tracking-[0.2em] text-[#db3e79] mb-4 fade-in" data-fade>
+                Our Facility
+              </p>
+              <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tighter mb-6 fade-in" data-fade>
+                The Coliseum
+              </h1>
+              <p className="text-xl text-zinc-300 max-w-2xl mx-auto fade-in" data-fade>
                 Where Team 172 builds, tests, and perfects our robots year-round
               </p>
             </div>
@@ -104,7 +111,7 @@ export default function Coliseum() {
           {/* STEM Coliseum Banner (from Sponsorships assets) */}
           <section className="py-12 px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="rounded-lg overflow-hidden border border-zinc-800">
+              <div className="rounded-lg overflow-hidden border border-zinc-800 fade-in" data-fade>
                 <ImageWithFallback
                   src={stemColiseumAsset}
                   alt="STEM Coliseum"
@@ -117,8 +124,10 @@ export default function Coliseum() {
           {/* Overview Section */}
           <section className="py-24 px-4 border-b border-zinc-600">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">Home of Northern Force</h2>
-              <p className="text-lg text-zinc-300 leading-relaxed mb-6 text-justify">
+              <h2 className="text-4xl font-black uppercase tracking-tighter mb-8 fade-in" data-fade>
+                Home of Northern Force
+              </h2>
+              <p className="text-lg text-zinc-300 leading-relaxed mb-6 text-justify fade-in" data-fade>
                  The Coliseum serves as the headquarters for Northern Force Robotics Team 172.
                 The STEM Coliseum and Robotics Learning Center, with its mechatronics-related programs and resources, robotics competition arena, FAB and additive manufacturing labs, precision machine shop, CAD and AI computer labs, and team manufacturing spaces, has evolved into Maine's largest non-profit provider of STEM robotics-related experiences, and build and learning resources.
                 Our vision is to inspire Maine young people to be Maine's future innovators, creators, entrepreneurs, and leaders, through cost-effective, mentor-led, experiential programs, workshops, and competitions, while cultivating workforce readiness demonstrable to schools and employers through a standardized digital learning transcript of the student's concept and skill mastery built over their time spent with us.
@@ -133,7 +142,7 @@ export default function Coliseum() {
           {/* Photo Section */}
           <section className="py-24 px-4 border-b border-[#db3e79]">
             <div className="max-w-20xl mx-auto">
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-3 gap-4 fade-in" data-fade>
 
                 <HoloTiltCard>
                   <ImageWithFallback
@@ -166,25 +175,33 @@ export default function Coliseum() {
           {/* Facilities Section */}
           <section className="py-24 px-4 border-b border-zinc-900">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-4xl font-black uppercase tracking-tighter mb-12 text-center">Our Facilities</h2>
+              <h2 className="text-4xl font-black uppercase tracking-tighter mb-12 text-center fade-in" data-fade>
+                Our Facilities
+              </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg hover:border-[#db3e79] transition-colors">
-                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79]">Manufacturing</h3>
-                  <p className="text-zinc-300 leading-relaxed">
+                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79] fade-in" data-fade>
+                    Manufacturing
+                  </h3>
+                  <p className="text-zinc-300 leading-relaxed fade-in" data-fade>
                     Machines and tools for building and fabricating our robots...
                   </p>
                 </div>
 
                 <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg hover:border-[#db3e79] transition-colors">
-                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79]">Computer Lab</h3>
-                  <p className="text-zinc-300 leading-relaxed">
+                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79] fade-in" data-fade>
+                    Computer Lab
+                  </h3>
+                  <p className="text-zinc-300 leading-relaxed fade-in" data-fade>
                     Computers, software, and development tools for programming, CAD, and exploring STEM.
                   </p>
                 </div>
 
                 <div className="bg-[#1a1a1a] border border-zinc-800 p-8 rounded-lg hover:border-[#db3e79] transition-colors">
-                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79]">Testing Arena</h3>
-                  <p className="text-zinc-300 leading-relaxed">
+                  <h3 className="text-2xl font-black uppercase mb-4 text-[#db3e79] fade-in" data-fade>
+                    Testing Arena
+                  </h3>
+                  <p className="text-zinc-300 leading-relaxed fade-in" data-fade>
                     Close to full-sized arena replica for testing robot performance.
                   </p>
                 </div>
@@ -195,13 +212,16 @@ export default function Coliseum() {
           {/* Visit Section */}
           <section className="py-24 px-4 bg-[#1a1a1a] border-b border-zinc-900">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">Visit Us</h2>
-              <p className="text-lg text-zinc-300 mb-8 max-w-2xl mx-auto">
+              <h2 className="text-4xl font-black uppercase tracking-tighter mb-8 fade-in" data-fade>
+                Visit Us
+              </h2>
+              <p className="text-lg text-zinc-300 mb-8 max-w-2xl mx-auto fade-in" data-fade>
                 Interested in seeing our facility or learning more about Team 172? We'd love to meet you!
               </p>
               <button
-                className="px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)]"
+                className="px-10 py-4 bg-[#db3e79] text-black font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(219,62,121,0.3)] fade-in"
                 onClick={() => window.location.href = '/contact'}
+                data-fade
               >
                 Get in Touch
               </button>
@@ -212,6 +232,7 @@ export default function Coliseum() {
 
         <LinksSection />
         <Footer />
+        </FadeIn>
       </div>
     </>
   );
