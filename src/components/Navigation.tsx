@@ -15,7 +15,7 @@ export function Navigation() {
     "Our Team",
     "Contact",
     "Donate",
-    "Design",
+    "Robots",
   ];
 
   const rightButtons = [
@@ -103,7 +103,7 @@ export function Navigation() {
               }
               
               let path = "/comingsoonpage";
-              if (button === 'Design') path = "/design";
+              if (button === 'Robots') path = "/robots";
               if (button === 'Contact') path = "/contact";
               
               return (
