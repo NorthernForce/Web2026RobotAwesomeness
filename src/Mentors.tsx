@@ -1,6 +1,7 @@
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { User } from 'lucide-react';
+import { LinksSection } from './components/LinksSection';
 
 interface MentorProfile {
   name: string;
@@ -117,6 +118,7 @@ export function Mentors() {
               </section>
             )}
           </div>
+          <LinksSection />
           <Footer />
         </div>
       </div>
