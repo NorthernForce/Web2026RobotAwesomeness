@@ -13,13 +13,6 @@ export function LinksSection() {
       isExternal: true,
     },
     {
-      title: 'Team Calendar',
-      description: 'View our upcoming events and competitions',
-      url: '/news',
-      icon: Calendar,
-      isExternal: false,
-    },
-    {
       title: 'Join Our Team',
       description: 'Interested in joining Northern Force?',
       url: '/contact',
@@ -42,12 +35,13 @@ export function LinksSection() {
         <h2 className="text-4xl font-bold text-center mb-12 text-white">
           Quick Links
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {links.map((link, index) => 
             link.isExternal ? (
               <a
                 key={index}
                 href={link.url}
+                target="_blank"
                 className="bg-gray-900 border-2 border-gray-800 hover:border-[#db3e79] rounded-lg p-6 transition-all hover:scale-105 group"
               >
                 <div className="flex items-center justify-between mb-3">

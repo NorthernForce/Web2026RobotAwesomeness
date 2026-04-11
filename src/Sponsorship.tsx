@@ -2,6 +2,7 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Award, Zap, Users, User } from 'lucide-react';
 import { ImageWithFallback } from './components/ImagewithFallback';
+import { LinksSection } from './components/LinksSection';
 
 // local sponsor assets (some logos live in src/assets/Sponsorships, some in public/images)
 import brookfieldLogo from './assets/Sponsorships/brookfield-properties-logo-png_seeklogo-339528.png'
@@ -139,6 +140,7 @@ export function Sponsorship() {
             </div>
           </div>
         </div>
+        <LinksSection />
         <Footer />
       </div></>
   );

@@ -9,8 +9,8 @@ export function Donate() {
   // Minimal, focused donate page: preserve title and the core paragraph.
   // Provide an optional redirect to an external Squarespace donation page.
   // Redirect is disabled by default. Set to true in code when you want automatic redirect.
-  const [redirectEnabled, setRedirectEnabled] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState('https://example.com');
+  const [redirectEnabled] = useState(false);
+  const [redirectUrl] = useState('https://example.com');
   const [openNewTab, setOpenNewTab] = useState(false);
   const [popup, setPopup] = useState({ show: false, title: '', message: '' });
 

@@ -14,12 +14,12 @@ export function Navigation() {
   const leftButtons = [
     "Our Team",
     "Contact",
-    "Donate",
-    "Design",
+    "Donate"
   ];
 
   const rightButtons = [
-    "News",
+    "Robots",
+    //"News",
     "Coliseum",
     "Memorial",
     //Socials
@@ -103,7 +103,7 @@ export function Navigation() {
               }
               
               let path = "/comingsoonpage";
-              if (button === 'Design') path = "/design";
+              if (button === 'Robots') path = "/robots";
               if (button === 'Contact') path = "/contact";
               
               return (
@@ -130,6 +130,7 @@ export function Navigation() {
               if (button === 'News') path = "/news";
               if (button === 'Coliseum') path = "/coliseum";
               if (button === 'Memorial') path = "/memorial";
+              if (button === 'Robots') path = "/robots";
               
               return (
                 <Link
