@@ -1,4 +1,4 @@
-import { ExternalLink, Users, Calendar, Shrimp } from 'lucide-react';
+import { ExternalLink, Users, Shrimp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import firstLogo from '/images/first-logo-frc-4.png';
 
