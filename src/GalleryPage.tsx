@@ -25,7 +25,8 @@ export function GalleryPage() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
   // Load images
-  const imageModules = import.meta.glob('/public/images/Gallery Photos/**/*', { eager: true });
+  // Lazy glob: only the file paths are needed, and public assets can't be imported from JS
+  const imageModules = import.meta.glob('/public/images/Gallery Photos/**/*');
   const folderMap: Record<string, Photo[]> = {};
 
   Object.keys(imageModules)
@@ -56,7 +57,7 @@ export function GalleryPage() {
   const filteredPhotos = photos;
 
   // Load videos
-  const videoModules = import.meta.glob('/public/images/Gallery Videos/*', { eager: true });
+  const videoModules = import.meta.glob('/public/images/Gallery Videos/*');
   const videoPaths = Object.keys(videoModules)
     .filter(path => /\.(mp4|webm|mov|avi|mkv)$/i.test(path))
     .map(path => path.replace('/public', ''))

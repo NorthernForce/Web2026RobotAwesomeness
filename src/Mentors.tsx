@@ -10,7 +10,6 @@ interface MentorProfile {
 
 export function Mentors() {
   const mentors: MentorProfile[] = [
-    { name: 'Luke Hankins' },
     { name: 'John Crosby' },
     { name: 'John Kraljic' },
     { name: 'Peter Merrrow' },
@@ -33,7 +32,8 @@ export function Mentors() {
   ];
 
   const leaders: MentorProfile[] = [
-    { name: 'Meredith Greenlaw', role: 'Team Lead' },
+    { name: 'Meredith Greenlaw', role: 'Lead Mentor' },
+    { name: 'Luke Hankins', role: 'Lead Mentor' },
   ];
 
   const peopleToNote: MentorProfile[] = [

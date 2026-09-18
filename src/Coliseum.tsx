@@ -83,7 +83,7 @@ export default function Coliseum() {
   return (
     <>
       <head>
-        <title>Team 172 | The Coliseum</title>
+        <title>Team 172 | The STEM Coliseum</title>
       </head>
 
       <div className="min-h-screen bg-black text-white selection:bg-[#db3e79] selection:text-white">
@@ -93,8 +93,8 @@ export default function Coliseum() {
           {/* Hero Section */}
           <section className="relative py-32 px-4 bg-gradient-to-b from-[#1a1a1a] to-black border-b border-zinc-900">
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-sm uppercase font-bold tracking-[0.2em] text-[#db3e79] mb-4">Our Facility</p>
-              <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tighter mb-6">The Coliseum</h1>
+              <p className="text-sm uppercase font-bold tracking-[0.2em] text-[#db3e79] mb-4">Our Home</p>
+              <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tighter mb-6">The STEM Coliseum</h1>
               <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
                 Where Team 172 builds, tests, and perfects our robots year-round
               </p>
@@ -119,7 +119,7 @@ export default function Coliseum() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl font-black uppercase tracking-tighter mb-8">Home of Northern Force</h2>
               <p className="text-lg text-zinc-300 leading-relaxed mb-6 text-justify">
-                 The Coliseum serves as the headquarters for Northern Force Robotics Team 172.
+                 The STEM Coliseum serves as the headquarters for Northern Force Robotics Team 172.
                 The STEM Coliseum and Robotics Learning Center, with its mechatronics-related programs and resources, robotics competition arena, FAB and additive manufacturing labs, precision machine shop, CAD and AI computer labs, and team manufacturing spaces, has evolved into Maine's largest non-profit provider of STEM robotics-related experiences, and build and learning resources.
                 Our vision is to inspire Maine young people to be Maine's future innovators, creators, entrepreneurs, and leaders, through cost-effective, mentor-led, experiential programs, workshops, and competitions, while cultivating workforce readiness demonstrable to schools and employers through a standardized digital learning transcript of the student's concept and skill mastery built over their time spent with us.
                 By giving students access to industrial quality resources, presenting them with challenging STEM problems, and allowing them to work with experienced STEM industry mentors, educators, and businesspeople, the STEM Coliseum and its partners give students early exposure to the professional world of STEM and enterprise.
@@ -138,7 +138,7 @@ export default function Coliseum() {
                 <HoloTiltCard>
                   <ImageWithFallback
                     src={coliseum1}
-                    alt="Coliseum Interior"
+                    alt="STEM Coliseum Interior"
                     className="w-full h-auto rounded-lg"
                   />
                 </HoloTiltCard>
@@ -146,7 +146,7 @@ export default function Coliseum() {
                 <HoloTiltCard>
                   <ImageWithFallback
                     src={coliseum2}
-                    alt="Coliseum Exterior"
+                    alt="STEM Coliseum Exterior"
                     className="w-full h-auto rounded-lg"
                   />
                 </HoloTiltCard>
@@ -154,7 +154,7 @@ export default function Coliseum() {
                 <HoloTiltCard>
                   <ImageWithFallback
                     src={coliseum3}
-                    alt="Coliseum Workspace"
+                    alt="STEM Coliseum Workspace"
                     className="w-full h-auto rounded-lg"
                   />
                 </HoloTiltCard>

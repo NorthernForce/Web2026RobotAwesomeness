@@ -9,9 +9,9 @@ export function Donate() {
   // Minimal, focused donate page: preserve title and the core paragraph.
   // Provide an optional redirect to an external Squarespace donation page.
   // Redirect is disabled by default. Set to true in code when you want automatic redirect.
-  const [redirectEnabled] = useState(false);
+  // const [redirectEnabled] = useState(false);
   const [redirectUrl] = useState('https://example.com');
-  const [openNewTab, setOpenNewTab] = useState(false);
+  const [openNewTab] = useState(false);
   const [popup, setPopup] = useState({ show: false, title: '', message: '' });
 
   function isValidUrl(u: string) {
@@ -24,6 +24,7 @@ export function Donate() {
     }
   }
 
+  /* Used by the disabled Squarespace redirect section below.
   const handleDonate = () => {
     if (redirectEnabled && isValidUrl(redirectUrl)) {
       if (openNewTab) window.open(redirectUrl, '_blank');
@@ -39,6 +40,7 @@ export function Donate() {
         'We redirect donations to an external page. Enable the redirect and provide a valid Squarespace URL to send donors there.'
     });
   };
+  */
 
   const Popup = () =>
     popup.show ? (
@@ -98,6 +100,7 @@ export function Donate() {
             </p>
           </section>
 
+          {/* Optional: Redirect donors to Squarespace (disabled)
           <section className="bg-[#0f0f0f] border border-zinc-800 rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-3">Optional: Redirect donors to Squarespace</h3>
 
@@ -166,6 +169,7 @@ export function Donate() {
               </button>
             </div>
           </section>
+          */}
         </main>
 
         <LinksSection />
